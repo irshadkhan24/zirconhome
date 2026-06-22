@@ -1,0 +1,685 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+display:flex;
+background:#eef2f7;
+overflow-x:hidden;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+width:190px;
+height:100vh;
+background:#0b0f19;
+
+position:fixed;
+top:0;
+left:0;
+
+padding:10px 8px;
+
+overflow-y:auto;
+
+border-right:1px solid rgba(255,255,255,0.05);
+
+z-index:1000;
+}
+
+/* SCROLL */
+
+.sidebar::-webkit-scrollbar{
+width:3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+background:#4A90E2;
+border-radius:10px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+text-align:center;
+margin-bottom:12px;
+
+padding-bottom:10px;
+
+border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+/* COMPANY LOGO */
+
+.logo img{
+width:45px;
+height:45px;
+object-fit:contain;
+margin-bottom:4px;
+}
+
+/* COMPANY NAME */
+
+.logo h2{
+font-size:14px;
+font-weight:700;
+color:#fff;
+}
+
+/* =========================
+   SIDEBAR LINKS
+========================= */
+
+.sidebar a{
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:9px 10px;
+
+margin-bottom:3px;
+
+border-radius:9px;
+
+text-decoration:none;
+
+font-size:13px;
+font-weight:500;
+
+color:#d1d5db;
+
+transition:0.3s;
+}
+
+/* LEFT CONTENT */
+
+.sidebar a span{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+/* ICON */
+
+.sidebar a i{
+font-size:12px;
+}
+
+/* HOVER */
+
+.sidebar a:hover{
+background:rgba(74,144,226,0.12);
+
+color:#4A90E2;
+
+transform:translateX(3px);
+}
+
+/* ACTIVE */
+
+.sidebar a.active{
+background:#4A90E2;
+color:#fff;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown{
+margin-bottom:3px;
+}
+
+.dropdown-btn{
+cursor:pointer;
+}
+
+/* SUBMENU */
+
+.dropdown-content{
+display:none;
+
+padding-left:8px;
+margin-top:3px;
+}
+
+.dropdown-content a{
+background:#111827;
+
+font-size:12px;
+
+padding:8px 9px;
+
+border-radius:8px;
+
+margin-bottom:3px;
+}
+
+/* SUBMENU HOVER */
+
+.dropdown-content a:hover{
+background:#4A90E2;
+color:#fff;
+}
+
+/* SHOW */
+
+.dropdown.active .dropdown-content{
+display:block;
+}
+
+/* ARROW */
+
+.arrow{
+font-size:9px;
+transition:0.3s;
+}
+
+.dropdown.active .arrow{
+transform:rotate(180deg);
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.sidebar button{
+width:100%;
+
+padding:9px;
+
+margin-top:8px;
+
+border:none;
+border-radius:9px;
+
+background:#ef4444;
+
+color:#fff;
+
+font-size:13px;
+font-weight:600;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+.sidebar button:hover{
+background:#dc2626;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+margin-left:190px;
+padding:22px;
+width:100%;
+min-height:100vh;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topBar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:25px;
+
+flex-wrap:wrap;
+gap:12px;
+}
+
+/* HEADING */
+
+.topBar h1{
+font-size:32px;
+font-weight:800;
+color:#111827;
+}
+
+/* =========================
+   RIGHT PROFILE
+========================= */
+
+.adminProfile{
+display:flex;
+align-items:center;
+gap:10px;
+
+background:#fff;
+
+padding:8px 14px;
+
+border-radius:12px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,0.06);
+}
+
+/* COMPANY IMAGE */
+
+.adminProfile img{
+width:42px;
+height:42px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:2px solid #4A90E2;
+}
+
+/* TEXT */
+
+.adminProfile h4{
+font-size:14px;
+margin-bottom:2px;
+}
+
+.adminProfile p{
+font-size:11px;
+color:#6b7280;
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
+.topCards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:18px;
+
+margin-bottom:30px;
+}
+
+/* =========================
+   CARD COMMON
+========================= */
+
+.summaryCard,
+.cardBox{
+
+position:relative;
+
+background:#fff;
+
+padding:24px 18px;
+
+border-radius:18px;
+
+overflow:hidden;
+
+transition:0.35s ease;
+
+cursor:pointer;
+
+border:1px solid rgba(0,0,0,0.05);
+
+/* CENTER CONTENT */
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+opacity:0;
+transform:translateY(50px);
+}
+
+/* =========================
+   BORDER
+========================= */
+
+.summaryCard::after,
+.cardBox::after{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+padding:2px;
+
+border-radius:18px;
+
+background:linear-gradient(
+135deg,
+#4A90E2,
+#60a5fa,
+#f97316,
+#1d4ed8
+);
+
+background-size:300% 300%;
+
+animation:borderMove 5s linear infinite;
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.summaryCard:hover,
+.cardBox:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 8px 18px rgba(74,144,226,0.16);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.summaryCard i,
+.cardBox i{
+
+font-size:30px;
+
+color:#4A90E2;
+
+margin-bottom:12px;
+
+position:relative;
+
+transition:0.35s ease;
+
+/* SIDE MOTION */
+
+animation:iconMove 3.5s ease-in-out infinite;
+}
+
+/* HOVER ICON */
+
+.summaryCard:hover i,
+.cardBox:hover i{
+
+color:#f97316;
+
+transform:scale(1.05);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.summaryCard h3,
+.cardBox h3{
+
+font-size:16px;
+
+margin-bottom:10px;
+
+font-weight:700;
+
+color:#1f2937;
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.summaryCard p,
+.cardBox p{
+
+font-size:32px;
+
+font-weight:800;
+
+color:#111827;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.dashboardSection{
+margin-bottom:35px;
+}
+
+/* SECTION TITLE */
+
+.dashboardSection h2{
+font-size:22px;
+font-weight:800;
+
+margin-bottom:18px;
+
+color:#111827;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.cardsGrid{
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:18px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.summaryCard.show,
+.cardBox.show{
+animation:fadeUp 0.8s forwards;
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes fadeUp{
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* BORDER */
+
+@keyframes borderMove{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:300%;
+}
+
+}
+
+/* ICON SIDE ANIMATION */
+
+@keyframes iconMove{
+
+0%{
+transform:translateX(0px);
+}
+
+25%{
+transform:translateX(2px);
+}
+
+50%{
+transform:translateX(5px);
+}
+
+75%{
+transform:translateX(2px);
+}
+
+100%{
+transform:translateX(0px);
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.sidebar{
+width:170px;
+}
+
+.main{
+margin-left:170px;
+padding:15px;
+}
+
+.topBar h1{
+font-size:26px;
+}
+
+}
+
+@media(max-width:550px){
+
+body{
+flex-direction:column;
+}
+
+.sidebar{
+position:relative;
+width:100%;
+height:auto;
+}
+
+.main{
+margin-left:0;
+padding:14px;
+}
+
+.topCards,
+.cardsGrid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* =========================
+   DROPDOWN MENU FIX
+========================= */
+
+.menu-item{
+display:flex;
+align-items:center;
+
+background:transparent;
+
+border-radius:9px;
+
+margin-bottom:3px;
+
+transition:0.3s;
+}
+
+/* MAIN LINK */
+
+.menu-link{
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+width:100%;
+
+padding:9px 10px;
+
+border-radius:9px;
+
+text-decoration:none;
+
+font-size:13px;
+font-weight:500;
+
+color:#d1d5db;
+
+transition:0.3s;
+}
+
+/* LEFT SIDE */
+
+.menu-link span{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+/* ICON */
+
+.menu-link i{
+font-size:12px;
+}
+
+/* ARROW */
+
+.dropdown-toggle{
+padding-right:10px;
+
+font-size:9px;
+
+color:#d1d5db;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+/* SAME HOVER AS OLD */
+
+.menu-item:hover{
+background:rgba(74,144,226,0.12);
+
+transform:translateX(3px);
+}
+
+.menu-item:hover .menu-link,
+.menu-item:hover .dropdown-toggle{
+color:#4A90E2;
+}
+
+/* ROTATE */
+
+.dropdown.active .dropdown-toggle{
+transform:rotate(180deg);
+}

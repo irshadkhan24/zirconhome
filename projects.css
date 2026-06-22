@@ -1,0 +1,334 @@
+
+
+/* ===== Hero Section ===== */
+.projects-hero {
+  padding: 80px 20px 50px 20px; /* bottom thoda kam */
+  background: #222;
+  color: #fff;
+  text-align: center;
+}
+
+.projects-hero h1 {
+  font-size: 42px;
+  color: #F47A20;
+  margin-bottom: 20px;
+}
+
+.projects-hero p {
+  font-size: 18px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+
+/* ===== Tabs Container ===== */
+.move-btn-container {
+  text-align: center;
+  margin: 50px 0 40px 0;
+}
+
+/* Tabs wrapper to hold buttons horizontally */
+.tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Buttons style */
+.move-btn {
+  background: #fff;
+  color: #333;
+  border: 2px solid #F47A20;
+  border-radius: 30px;
+  padding: 12px 28px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Active & Hover */
+.move-btn.active,
+.move-btn:hover {
+  background: #F47A20;
+  color: #fff;
+}
+
+/* Project Paragraphs */
+.project-paragraph {
+  max-width: 900px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 0 15px;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #333;
+}
+.project-paragraph h3 {
+  color: #F47A20;
+  margin-bottom: 10px;
+}
+.project-paragraph p {
+  color: #555;
+}
+
+/* Responsive: Tabs stacking */
+@media (max-width: 600px) {
+  .tabs-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+
+/* FOOTER  */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 50px 20px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* 🔥 3 equal columns */
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.footer h3,
+.footer h4 {
+  color: #F47A20;
+  margin-bottom: 15px;
+}
+
+.footer p,
+.footer a,
+.footer ul li {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #F47A20;
+}
+
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-center ul li {
+  margin-bottom: 10px;
+}
+
+.footer-social-projects a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  position: relative;   
+  overflow: hidden; 
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+.footer-social-projects a i {
+  font-size: 18px;
+  color: #4A90E2;   
+  transition: all 0.3s ease;
+}
+.footer-social-projects a:hover i {
+  color: #F47A20;   
+}
+
+/* Border Animation In Circle */
+
+
+.footer-social-projects a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+
+  background: linear-gradient(120deg, #4A90E2, #F47A20, #4A90E2);
+  background-size: 300% 300%;
+  animation: glowMove 4s linear infinite;
+
+  /* border banane ka trick */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* ANIMATION */
+@keyframes glowMove {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
+}
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px 0 0 0;
+  font-size: 13px;
+  color: #aaa;
+}
+.footer-bottom span {
+  color: #F47A20;
+  font-weight: bold;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  .footer-social-projects a {
+    margin-right: 8px;
+    margin-bottom: 5px;
+  }
+}
+/* footer divider */
+.footer-divider {
+  width: 80%;
+  height: 1px;
+  margin: 30px auto;
+  background: linear-gradient(to right, transparent, #4A90E2, #F47A20, transparent);
+}
+/* FOOTER ANIMATION */
+.footer {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+.footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Footer inner elements staggered animation */
+.footer-left,
+.footer-center,
+.footer-right,
+.footer-bottom {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.footer.show .footer-left {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+.footer.show .footer-center {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+.footer.show .footer-right {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.footer.show .footer-bottom {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+
+
+/* Smooth Fade-in Animation for all animate elements */
+.animate, .project-paragraph, .footer-left, .footer-center, .footer-right, .footer-bottom {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.animate > * {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.8s ease-out;
+}
+
+.show > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width:768px){
+
+  .dropdown{
+    display:none;
+    position:static;
+    width:100%;
+  }
+
+  .dropdown.show-dropdown{
+    display:block;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .projects-hero h1{
+    font-size: 30px;
+  }
+
+  .projects-hero p{
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .project-paragraph{
+    width: 95%;
+    margin: 25px auto;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .project-paragraph h3{
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .project-paragraph p{
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+}
+

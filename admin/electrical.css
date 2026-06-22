@@ -1,0 +1,464 @@
+/* =========================
+   INTERIOR PAGE
+========================= */
+
+.electrical-page{
+  margin-left:190px;
+  width:calc(100% - 190px);
+  min-height:100vh;
+  padding:22px;
+  background:#f4f6f9;
+}
+
+/* CONTAINER */
+
+.electrical-page .container{
+  width:100%;
+  max-width:100%;
+  margin:0 auto;
+}
+
+/* ================= HEADINGS ================= */
+
+.electrical-page h1{
+  font-size:30px;
+  font-weight:700;
+  color:#111;
+  margin-bottom:18px;
+}
+
+.electrical-page h2{
+  font-size:24px;
+  font-weight:700;
+  color:#111;
+  margin:8px 0 20px;
+  position:relative;
+  padding-left:4px;
+}
+
+.electrical-page h2::before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:75px;
+  height:3px;
+  background:#F47A20;
+  border-radius:10px;
+}
+
+/* ================= FORM ================= */
+
+.electrical-page form{
+  background:#fff;
+  padding:16px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  margin-bottom:28px;
+  max-width:850px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* INPUTS */
+
+.electrical-page input,
+.electrical-page textarea{
+  width:100%;
+  padding:10px 12px;
+  margin-bottom:10px;
+  border:1px solid #d6d6d6;
+  border-radius:7px;
+  font-size:13px;
+  background:#fff;
+  color:#222;
+}
+
+.electrical-page textarea{
+  min-height:65px;
+  resize:vertical;
+}
+
+.electrical-page input:focus,
+.electrical-page textarea:focus{
+  outline:none;
+  border-color:#F47A20;
+}
+
+.electrical-page input[type="file"]{
+  padding:8px;
+}
+
+/* BUTTON */
+
+.electrical-page button{
+  background:#F47A20;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.electrical-page button:hover{
+  background:#d86510;
+}
+
+/* ================= UPLOAD TOP ================= */
+
+.uploadTop{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+/* ADD BUTTON */
+
+#addMoreBtn{
+  width:35px;
+  height:35px;
+  border:none;
+  border-radius:50%;
+  background:#4A90E2;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+  line-height:1;
+  position:relative;
+  top:-5px;
+}
+
+#addMoreBtn:hover{
+  background:#2f76c7;
+}
+
+/* ================= IMAGE DETAIL BOX ================= */
+
+.imgDetailBox{
+  position:relative;
+  background:#fafafa;
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:15px;
+}
+
+.fileName{
+  color:#F47A20;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+/* REMOVE BUTTON */
+
+.electrical-page .removeBtn{
+  position:absolute;
+  top:6px;
+  right:10px;
+
+  width:30px;
+  height:30px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#ff4d4d;
+  color:#fff;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+  line-height:1;
+}
+
+.electrical-page .removeBtn:hover{
+  background:#e03a3a;
+}
+
+/* ================= CARD LIST ================= */
+
+#electricalList{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+/* ================= MAIN CARD ================= */
+
+.electrical-page .electricalDataCard{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:14px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* TOP CONTENT */
+
+.electrical-page .topContent{
+  margin-bottom:12px;
+  padding-bottom:10px;
+  border-bottom:1px solid #eee;
+}
+
+/* FIELD */
+
+.electrical-page .dataField{
+  margin-bottom:6px;
+  font-size:13px;
+  line-height:1.5;
+  color:#333;
+  word-break:break-word;
+}
+
+.electrical-page .dataField strong{
+  color:#000;
+}
+
+/* ================= IMAGE GRID ================= */
+
+.electrical-page .imagePreview{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:15px;
+}
+
+/* CARD */
+
+.electrical-page .previewCard{
+  background:#fff;
+  border:1px solid #e3e3e3;
+  border-radius:8px;
+  overflow:hidden;
+  padding:8px;
+  text-align:center;
+}
+
+/* IMAGE */
+
+.electrical-page .previewCard img{
+  width:100%;
+  height:110px;
+  object-fit:cover;
+  border-radius:4px;
+  margin-bottom:8px;
+}
+
+/* TITLE */
+
+.electrical-page .previewCard h4{
+  font-size:15px;
+  color:#F47A20;
+  font-weight:700;
+  margin-bottom:6px;
+  line-height:1.2;
+}
+
+/* DESCRIPTION */
+
+.electrical-page .previewCard p{
+  font-size:11px;
+  color:#666;
+  line-height:1.4;
+  word-break:break-word;
+  margin:0;
+}
+
+/* ================= MAIN ACTIONS ================= */
+
+.electrical-page .mainActions{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+/* BUTTONS */
+
+.electrical-page .mainActions button{
+  padding:7px 18px;
+  border:none;
+  border-radius:6px;
+  color:#fff;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* EDIT */
+
+.electrical-page .editBtn{
+  background:#3498db;
+}
+
+.electrical-page .editBtn:hover{
+  background:#2980b9;
+}
+
+/* DELETE */
+
+.electrical-page .deleteBtn{
+  background:#c0392b;
+}
+
+.electrical-page .deleteBtn:hover{
+  background:#992d22;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1100px){
+
+  .electrical-page .imagePreview{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:768px){
+
+  .electrical-page{
+    margin-left:0;
+    padding:12px;
+  }
+
+  .electrical-page h1{
+    font-size:24px;
+  }
+
+  .electrical-page h2{
+    font-size:20px;
+  }
+
+  .electrical-page .imagePreview{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:500px){
+
+  .electrical-page .imagePreview{
+    grid-template-columns:1fr;
+  }
+
+  .electrical-page .mainActions{
+    flex-direction:column;
+  }
+
+  .electrical-page .mainActions button{
+    width:100%;
+  }
+}
+
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.pageHeader{
+    background:#fff;
+    padding:25px 30px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    border-left:5px solid #F47A20;
+}
+
+.pageHeader h1{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:30px;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.pageHeader h1 i{
+    color:#F47A20;
+}
+
+.pageHeader p{
+    color:#6b7280;
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* =========================
+   PREVIEW DIVIDER
+========================= */
+
+.previewDivider{
+    max-width:100%;
+    margin:45px auto 30px;
+    text-align:center;
+    position:relative;
+}
+
+.previewDivider::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:3px;
+    border-radius:50px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #4A90E2,
+        #F47A20,
+        #4A90E2,
+        transparent
+    );
+}
+
+.previewDivider span{
+    position:relative;
+    z-index:2;
+    background:#fff;
+    padding:10px 24px;
+    border-radius:50px;
+    border:1px solid #dbeafe;
+    color:#1e3a5f;
+    font-size:15px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.previewDivider i{
+    color:#F47A20;
+}
+
+
+@media(max-width:768px){
+
+  .electrical-page{
+    margin-left:170px;
+    width:calc(100% - 170px);
+    padding:15px;
+  }
+}
+
+@media(max-width:550px){
+
+  .electrical-page{
+    margin-left:0;
+    width:100%;
+    padding:14px;
+  }
+}

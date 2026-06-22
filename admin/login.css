@@ -1,0 +1,174 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#4A90E2,#0f2027);
+overflow:hidden;
+}
+
+/* neon background glow */
+body::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:linear-gradient(45deg,#F47A20,#4A90E2);
+filter:blur(200px);
+opacity:.6;
+animation:moveGlow 6s infinite alternate;
+}
+
+@keyframes moveGlow{
+0%{
+transform:translate(-200px,-200px);
+}
+100%{
+transform:translate(200px,200px);
+}
+}
+
+/* LOGIN BOX */
+
+.login-box{
+position:relative;
+width:380px;
+padding:45px;
+background:rgba(74,144,226,0.15);
+border-radius:18px;
+backdrop-filter:blur(15px);
+box-shadow:0 0 40px rgba(244,122,32,0.6);
+border:1px solid rgba(244,122,32,0.5);
+color:white;
+animation:floatBox 3s ease-in-out infinite;
+}
+
+/* floating animation */
+
+@keyframes floatBox{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-10px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+.login-box h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+/* INPUT GROUP */
+
+.input-group{
+position:relative;
+margin-bottom:20px;
+}
+
+.input-group input{
+width:100%;
+padding:12px 45px 12px 15px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(244,122,32,0.6);
+border-radius:8px;
+color:white;
+outline:none;
+font-size:14px;
+transition:0.3s;
+}
+
+.input-group input:focus{
+border:1px solid #F47A20;
+box-shadow:0 0 15px rgba(244,122,32,0.8);
+background:rgba(255,255,255,0.08);
+}
+
+.input-group input::placeholder{
+color:#ccc;
+}
+
+.input-group i{
+position:absolute;
+right:15px;
+top:50%;
+transform:translateY(-50%);
+cursor:pointer;
+color:#F47A20;
+font-size:15px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+-webkit-text-fill-color: white;
+transition: background-color 5000s ease-in-out 0s;
+}
+
+/* LOGIN BUTTON */
+  
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#F47A20,#ff9a3c);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+font-weight:bold;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(244,122,32,0.9);
+}
+
+#errorMsg{
+margin-top:10px;
+color:#ff4d4d;
+text-align:center;
+}
+/* Hide browser default password eye icon */
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none !important;
+}
+
+
+
+
+.forgot-link{
+margin-top:15px;
+text-align:center;
+}
+
+.forgot-link a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+transition:.3s;
+}
+
+.forgot-link a:hover{
+color:#F47A20;
+text-shadow:0 0 10px #F47A20;
+}

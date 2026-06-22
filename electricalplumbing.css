@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+    overflow-y: auto;   
+}
+
+/*  HEADER  */
+.select-header {
+    text-align: center;
+    padding: 70px 20px;
+    background: #f5f7fa;
+    padding-bottom: 35px;
+    overflow-x: hidden;
+}
+
+/* Header H1 slideLeft */
+.select-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(90deg,
+            #B8652C 0%,
+            #E97824 40%,
+            #2F6FB6 75%,
+            #6FA8DC 100%
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideLeft 1s ease forwards;
+    position: relative;
+}
+
+/* Underline breathing like icon */
+.select-header h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: #4A90E2;
+    margin: 12px auto 0;
+    border-radius: 5px;
+    animation: lineBreathe 5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Header paragraph slideRight */
+.select-header p {
+    color: #666;
+    margin-top: 10px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideRight 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/*  SECTION  */
+.select-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 20px;
+    flex-wrap: wrap;
+}
+
+/*  SERVICE BOX  */
+.service-box {
+    width: 380px;
+    background: #fff;
+    padding: 50px 30px;
+    border-radius: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #222;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Delay for second card */
+.service-box.plumbing {
+    animation-delay: 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.18),
+        0 0 35px rgba(33, 150, 243, 0.55);
+}
+
+.service-box .icon {
+    font-size: 65px;
+    display: block;
+    margin-bottom: 20px;
+    animation: breatheOut 5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.service-box:hover .icon {
+    animation-duration: 3s;
+}
+
+.service-box h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.service-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+.service-box button {
+    margin-top: 22px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 25px;
+    background: #F47A20;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.service-box button:hover {
+    background: #4A90E2;
+    transform: scale(1.05);
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.18),
+        0 0 35px rgba(74, 144, 226, 0.6);
+}
+
+.common {
+    border-top: 6px solid #ff9800;
+}
+
+.plumbing {
+    border-top: 6px solid #2196f3;
+}
+
+
+/*  RESPONSIVE  */
+@media (max-width: 768px) {
+    .service-box {
+        width: 100%;
+        max-width: 420px;
+    }
+}
+
+/*  KEYFRAMES  */
+@keyframes slideLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Service box fade up */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Icon breathing */
+@keyframes breatheOut {
+    0% {
+        transform: scale(0.75);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.75);
+        opacity: 0.6;
+    }
+}
+
+/* Underline breathing (like icon) */
+@keyframes lineBreathe {
+    0% {
+        transform: scaleX(0.75);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scaleX(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(0.75);
+        opacity: 0.6;
+    }
+}
+
+
+/* Footer Animation & Logic */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+  margin-top: 10px;
+}
+
+.footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.footer h3,
+.footer h4 {
+  color: #F47A20;
+  margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #F47A20;
+}
+
+/* SOCIAL ICON */
+.footer-social-common a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-social-common a i {
+  font-size: 18px;
+  color: #4A90E2;
+  transition: 0.3s;
+}
+
+.footer-social-common a:hover i {
+  color: #F47A20;
+}
+
+/* Glow Border */
+.footer-social-common a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(120deg, #4A90E2, #F47A20, #4A90E2);
+  background-size: 300% 300%;
+  animation: glowMove 4s linear infinite;
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+/* Divider */
+.footer-divider {
+  width: 80%;
+  height: 1px;
+  margin: 30px auto;
+  background: linear-gradient(to right, transparent, #4A90E2, #F47A20, transparent);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.footer-bottom span {
+  color: #F47A20;
+}
+
+/* Animation inside footer */
+.footer-left,
+.footer-center,
+.footer-right,
+.footer-bottom {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.footer.show .footer-left {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.footer.show .footer-center {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.footer.show .footer-right {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.footer.show .footer-bottom {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+/* Animation */
+@keyframes glowMove {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ul dot not show using this */
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Reveal from center */
+.reveal-center {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease;
+}
+
+.reveal-center.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* SERVICES CONTAINER */
+#electricalplumbingsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+

@@ -1,0 +1,223 @@
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+/* PAGE */
+body{
+  display:flex;
+  background:#f5f5f5;
+}
+
+/* MAIN */
+.main{
+  margin-left:220px;
+  padding:25px;
+  width:100%;
+}
+
+/* ===== FORM CARD (same as testimonial) ===== */
+form{
+  background:#fff;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  max-width:520px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* INPUTS */
+form input{
+  width:100%;
+  padding:11px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+/* FOCUS EFFECT (same feel as testimonial) */
+form input:focus{
+  border-color:#F47A20;
+  outline:none;
+  box-shadow:0 0 6px rgba(244,122,32,0.3);
+  transform:scale(1.02);
+}
+
+/* BUTTON */
+form button{
+  background:#F47A20;
+  color:#fff;
+  border:none;
+  padding:11px;
+  border-radius:6px;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* HOVER */
+form button:hover{
+  background:#d96512;
+}
+
+/* HEADINGS */
+
+
+/* ===== CONTACT LIST (same as testimonial cards) ===== */
+#contactList {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 15px;
+}
+
+/* CARD */
+#contactList div{
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  padding:15px;
+  margin-top:12px;
+  transition:0.3s;
+}
+
+/* HOVER CARD */
+#contactList div:hover{
+  transform:translateY(-3px);
+}
+
+/* TEXT */
+#contactList strong{
+  font-size:16px;
+  color:#333;
+}
+
+#contactList p{
+  font-size:14px;
+  color:#555;
+  margin:5px 0;
+}
+
+/* BUTTONS */
+#contactList button{
+  margin-top:8px;
+  margin-right:8px;
+  padding:6px 12px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:13px;
+  transition:0.3s;
+}
+
+/* EDIT */
+#contactList button:first-of-type{
+  background:#3498db;
+  color:#fff;
+}
+
+/* DELETE */
+#contactList button:last-of-type{
+  background:#c0392b;
+  color:#fff;
+}
+
+/* HOVER */
+#contactList button:first-of-type:hover{
+  background:#2980b9;
+}
+
+#contactList button:last-of-type:hover{
+  background:#992d22;
+}
+
+
+
+
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.pageHeader{
+    background:#fff;
+    padding:25px 30px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    border-left:5px solid #F47A20;
+}
+
+.pageHeader h1{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:30px;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.pageHeader h1 i{
+    color:#F47A20;
+}
+
+.pageHeader p{
+    color:#6b7280;
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* =========================
+   PREVIEW DIVIDER
+========================= */
+
+.previewDivider{
+    max-width:100%;
+    margin:45px auto 30px;
+    text-align:center;
+    position:relative;
+}
+
+.previewDivider::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:3px;
+    border-radius:50px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #4A90E2,
+        #F47A20,
+        #4A90E2,
+        transparent
+    );
+}
+
+.previewDivider span{
+    position:relative;
+    z-index:2;
+    background:#fff;
+    padding:10px 24px;
+    border-radius:50px;
+    border:1px solid #dbeafe;
+    color:#1e3a5f;
+    font-size:15px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.previewDivider i{
+    color:#F47A20;
+}

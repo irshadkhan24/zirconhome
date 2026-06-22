@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="admindashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<img src="../images/zhlogo.png">
+
+<h2>Zircon Home</h2>
+
+</div>
+
+<a href="admindashboard.html" class="active">
+<span>
+<i class="fa-solid fa-gauge"></i>
+Dashboard
+</span>
+</a>
+
+<a href="home.html">
+<span>
+<i class="fa-solid fa-house"></i>
+Home
+</span>
+</a>
+
+<a href="about.html">
+<span>
+<i class="fa-solid fa-circle-info"></i>
+About
+</span>
+</a>
+
+<a href="testimonials.html">
+<span>
+<i class="fa-solid fa-star"></i>
+Testimonials
+</span>
+</a>
+
+<a href="parties.html">
+<span>
+<i class="fa-solid fa-handshake"></i>
+Parties
+</span>
+</a>
+
+<!-- SERVICES -->
+
+<div class="dropdown">
+
+<div class="menu-item">
+
+<a href="service.html" class="menu-link">
+
+<span>
+<i class="fa-solid fa-screwdriver-wrench"></i>
+Services
+</span>
+
+</a>
+
+<i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+
+</div>
+
+<div class="dropdown-content">
+
+<a href="civil.html">
+<i class="fa-solid fa-building"></i>
+Civil Construction
+</a>
+
+<a href="interior.html">
+<i class="fa-solid fa-couch"></i>
+Interior Work
+</a>
+
+<a href="exterior.html">
+<i class="fa-solid fa-house"></i>
+Exterior Work
+</a>
+
+<a href="electricalplumbing.html">
+<i class="fa-solid fa-bolt"></i>
+Electrical & Plumbing
+</a>
+
+<a href="renovation.html">
+<i class="fa-solid fa-hammer"></i>
+Renovation
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECTS -->
+
+<div class="dropdown">
+
+<div class="menu-item">
+
+<a href="projects.html" class="menu-link">
+
+<span>
+<i class="fa-solid fa-building"></i>
+Projects
+</span>
+
+</a>
+
+<i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+
+</div>
+
+<div class="dropdown-content">
+
+<a href="complete.html">
+<i class="fa-solid fa-circle-check"></i>
+Completed
+</a>
+
+<a href="ongoing.html">
+<i class="fa-solid fa-spinner"></i>
+Ongoing
+</a>
+
+</div>
+
+</div>
+
+
+<a href="contact.html">
+
+<span>
+<i class="fa-solid fa-envelope"></i>
+Contact
+</span>
+
+</a>
+
+<button onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</button>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<!-- TOP BAR -->
+
+<div class="topBar">
+
+<h1>Admin Dashboard</h1>
+
+<div class="adminProfile">
+
+<img src="https://">
+
+<div>
+
+<h4>Admin</h4>
+
+<p>Zircon Home Panel</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SUMMARY -->
+
+<div class="topCards">
+
+<div class="summaryCard">
+
+<i class="fa-solid fa-star"></i>
+
+<h3>Testimonials</h3>
+
+<p id="totalTestimonials">0</p>
+
+</div>
+
+<div class="summaryCard">
+
+<i class="fa-solid fa-handshake"></i>
+
+<h3>Parties</h3>
+
+<p id="totalParties">0</p>
+
+</div>
+
+<div class="summaryCard">
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+<h3>Total Services</h3>
+
+<p id="totalServices">0</p>
+
+</div>
+
+</div>
+
+<!-- PROJECTS -->
+
+<div class="dashboardSection">
+
+<h2>Projects Overview</h2>
+
+<div class="cardsGrid">
+
+<div class="cardBox">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h3>Completed Projects</h3>
+
+<p id="totalcompletes">0</p>
+
+</div>
+
+<div class="cardBox">
+
+<i class="fa-solid fa-spinner"></i>
+
+<h3>Ongoing Projects</h3>
+
+<p id="totalongoings">0</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SERVICES -->
+
+<div class="dashboardSection">
+
+<h2>Services Overview</h2>
+
+<div class="cardsGrid">
+
+<div class="cardBox">
+<i class="fa-solid fa-building"></i>
+<h3>Civil Construction</h3>
+<p id="civilCount">0</p>
+</div>
+
+<div class="cardBox">
+<i class="fa-solid fa-couch"></i>
+<h3>Interior Work</h3>
+<p id="interiorCount">0</p>
+</div>
+
+<div class="cardBox">
+<i class="fa-solid fa-house"></i>
+<h3>Exterior Work</h3>
+<p id="exteriorCount">0</p>
+</div>
+
+<div class="cardBox">
+<i class="fa-solid fa-hammer"></i>
+<h3>Renovation</h3>
+<p id="renovationCount">0</p>
+</div>
+
+<div class="cardBox">
+<i class="fa-solid fa-bolt"></i>
+<h3>Electrical</h3>
+<p id="electricalCount">0</p>
+</div>
+
+<div class="cardBox">
+<i class="fa-solid fa-faucet"></i>
+<h3>Plumbing</h3>
+<p id="plumbingCount">0</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="admindashboard.js"></script>
+
+</body>
+</html>

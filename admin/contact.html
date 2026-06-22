@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact</title>
+
+<link rel="stylesheet" href="contact.css">
+<link rel="stylesheet" href="admindashboard.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<img src="../images/zhlogo.png">
+
+<h2>Zircon Home</h2>
+
+</div>
+
+<a href="admindashboard.html" class="active">
+<span>
+<i class="fa-solid fa-gauge"></i>
+Dashboard
+</span>
+</a>
+
+<a href="#">
+<span>
+<i class="fa-solid fa-house"></i>
+Home
+</span>
+</a>
+
+<a href="about.html">
+<span>
+<i class="fa-solid fa-circle-info"></i>
+About
+</span>
+</a>
+
+<a href="testimonials.html">
+<span>
+<i class="fa-solid fa-star"></i>
+Testimonials
+</span>
+</a>
+
+<a href="parties.html">
+<span>
+<i class="fa-solid fa-handshake"></i>
+Parties
+</span>
+</a>
+
+<!-- SERVICES -->
+
+<div class="dropdown">
+
+<div class="menu-item">
+
+<a href="service.html" class="menu-link">
+
+<span>
+<i class="fa-solid fa-screwdriver-wrench"></i>
+Services
+</span>
+
+</a>
+
+<i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+
+</div>
+
+<div class="dropdown-content">
+
+<a href="civil.html">
+<i class="fa-solid fa-building"></i>
+Civil Construction
+</a>
+
+<a href="interior.html">
+<i class="fa-solid fa-couch"></i>
+Interior Work
+</a>
+
+<a href="exterior.html">
+<i class="fa-solid fa-house"></i>
+Exterior Work
+</a>
+
+<a href="electricalplumbing.html">
+<i class="fa-solid fa-bolt"></i>
+Electrical & Plumbing
+</a>
+
+<a href="renovation.html">
+<i class="fa-solid fa-hammer"></i>
+Renovation
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECTS -->
+
+<div class="dropdown">
+
+<div class="menu-item">
+
+<a href="projects.html" class="menu-link">
+
+<span>
+<i class="fa-solid fa-building"></i>
+Projects
+</span>
+
+</a>
+
+<i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+
+</div>
+
+<div class="dropdown-content">
+
+<a href="complete.html">
+<i class="fa-solid fa-circle-check"></i>
+Completed
+</a>
+
+<a href="ongoing.html">
+<i class="fa-solid fa-spinner"></i>
+Ongoing
+</a>
+
+</div>
+
+</div>
+
+<a href="contact.html">
+
+<span>
+<i class="fa-solid fa-envelope"></i>
+Contact
+</span>
+
+</a>
+
+<button onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</button>
+
+</div>
+
+<div class="main">
+
+<div class="pageHeader">
+
+    <h1>
+        <i class="fa-solid fa-envelope"></i>
+        Manage Contact Data
+    </h1>
+
+    <p>
+        Add, update and manage company contact information, address, phone numbers and social links.
+    </p>
+
+</div>
+
+<form id="contactForm">
+
+<input id="heading" placeholder="Heading (Get In Touch)">
+<input id="subheading" placeholder="Sub Heading">
+<input id="title" placeholder="Title">
+<input id="companyName" placeholder="Company Name" required>
+
+<input id="address" placeholder="Address" required>
+<input id="phone" placeholder="Phone" required>
+<input id="email" placeholder="Email">
+<input id="timing" placeholder="Timing">
+<input id="whatsapp" placeholder="WhatsApp">
+<input id="mapLink" placeholder="Map Link">
+
+
+<button type="submit">Save</button>
+
+</form>
+
+<div class="previewDivider">
+    <span>
+        <i class="fa-solid fa-address-book"></i>
+        All Contact Details
+    </span>
+</div>
+
+
+
+<div id="contactList"></div>
+
+</div>
+<script src="contact.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

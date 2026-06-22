@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Admin Dashboard</title>
+
+  <link rel="stylesheet" href="admindashboard.css">
+  <link rel="stylesheet" href="about.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <div class="logo">
+
+      <img src="../images/zhlogo.png">
+
+      <h2>Zircon Home</h2>
+
+    </div>
+
+    <a href="admindashboard.html" class="active">
+      <span>
+        <i class="fa-solid fa-gauge"></i>
+        Dashboard
+      </span>
+    </a>
+
+    <a href="home.html">
+      <span>
+        <i class="fa-solid fa-house"></i>
+        Home
+      </span>
+    </a>
+
+    <a href="about.html">
+      <span>
+        <i class="fa-solid fa-circle-info"></i>
+        About
+      </span>
+    </a>
+
+    <a href="testimonials.html">
+      <span>
+        <i class="fa-solid fa-star"></i>
+        Testimonials
+      </span>
+    </a>
+
+    <a href="parties.html">
+      <span>
+        <i class="fa-solid fa-handshake"></i>
+        Parties
+      </span>
+    </a>
+
+    <!-- SERVICES -->
+
+    <div class="dropdown">
+
+      <div class="menu-item">
+
+        <a href="service.html" class="menu-link">
+
+          <span>
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            Services
+          </span>
+
+        </a>
+
+        <i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+
+      </div>
+
+      <div class="dropdown-content">
+
+        <a href="civil.html">
+          <i class="fa-solid fa-building"></i>
+          Civil Construction
+        </a>
+
+        <a href="interior.html">
+          <i class="fa-solid fa-couch"></i>
+          Interior Work
+        </a>
+
+        <a href="exterior.html">
+          <i class="fa-solid fa-house"></i>
+          Exterior Work
+        </a>
+
+        <a href="electricalplumbing.html">
+          <i class="fa-solid fa-bolt"></i>
+          Electrical & Plumbing
+        </a>
+
+        <a href="renovation.html">
+          <i class="fa-solid fa-hammer"></i>
+          Renovation
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROJECTS -->
+
+    <div class="dropdown">
+
+      <div class="menu-item">
+
+        <a href="projects.html" class="menu-link">
+
+          <span>
+            <i class="fa-solid fa-building"></i>
+            Projects
+          </span>
+
+        </a>
+
+        <i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+
+      </div>
+
+      <div class="dropdown-content">
+
+        <a href="complete.html">
+          <i class="fa-solid fa-circle-check"></i>
+          Completed
+        </a>
+
+        <a href="ongoing.html">
+          <i class="fa-solid fa-spinner"></i>
+          Ongoing
+        </a>
+
+      </div>
+
+    </div>
+
+    <a href="contact.html">
+
+      <span>
+        <i class="fa-solid fa-envelope"></i>
+        Contact
+      </span>
+
+    </a>
+
+    <button onclick="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      Logout
+    </button>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="main">
+
+    <div class="pageHeader">
+      <h1>Manage About Page</h1>
+      <p>Manage company information, mission, certifications, statistics and office details.</p>
+    </div>
+
+    <!-- FORM TOP -->
+    <div class="about-card">
+      <form id="aboutForm">
+        <input type="hidden" id="aboutId">
+
+        <select id="section" required>
+          <option value="about">About</option>
+          <option value="mission">Mission</option>
+          <option value="stats">Stats</option>
+          <option value="why">Why Choose</option>
+          <option value="certification">Certification</option>
+          <option value="office">Office</option>
+        </select>
+
+        <input type="file" id="image">
+        <input type="text" id="title" placeholder="Title">
+        <textarea id="description" placeholder="Description"></textarea>
+        <input type="text" id="value" placeholder="Value (Stats)">
+        <!-- STATS MULTI INPUT (ONLY FOR STATS) -->
+        <div id="statsFields" style="display:none;">
+
+          <h4>Stats (Fill All 4 Together)</h4>
+
+          <input type="text" id="s1title" placeholder="Years of Experience">
+          <input type="number" id="s1value" placeholder="10">
+
+          <input type="text" id="s2title" placeholder="Projects Completed">
+          <input type="number" id="s2value" placeholder="70">
+
+          <input type="text" id="s3title" placeholder="Skilled Workforce">
+          <input type="number" id="s3value" placeholder="80">
+
+          <input type="text" id="s4title" placeholder="Client Satisfaction">
+          <input type="number" id="s4value" placeholder="90">
+
+        </div>
+
+
+        <input type="text" id="icon" placeholder="Icon">
+
+        <button type="submit">Save</button>
+      </form>
+    </div>
+
+    <!-- LIST BELOW -->
+    <div class="about-card">
+      <div class="previewDivider">
+        <span>
+          <i class="fa-solid fa-layer-group"></i>
+          All Details of About
+        </span>
+      </div>
+      <div id="aboutList"></div>
+    </div>
+
+  </div>
+
+  <script src="about.js"></script>
+
+</body>
+
+</html>

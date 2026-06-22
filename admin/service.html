@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manage Services</title>
+
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="admindashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <img src="../images/zhlogo.png">
+
+            <h2>Zircon Home</h2>
+
+        </div>
+
+        <a href="admindashboard.html" class="active">
+            <span>
+                <i class="fa-solid fa-gauge"></i>
+                Dashboard
+            </span>
+        </a>
+
+        <a href="#">
+            <span>
+                <i class="fa-solid fa-house"></i>
+                Home
+            </span>
+        </a>
+
+        <a href="about.html">
+            <span>
+                <i class="fa-solid fa-circle-info"></i>
+                About
+            </span>
+        </a>
+
+        <a href="testimonials.html">
+            <span>
+                <i class="fa-solid fa-star"></i>
+                Testimonials
+            </span>
+        </a>
+
+        <a href="parties.html">
+            <span>
+                <i class="fa-solid fa-handshake"></i>
+                Parties
+            </span>
+        </a>
+
+        <!-- SERVICES -->
+
+        <div class="dropdown">
+
+            <div class="menu-item">
+
+                <a href="service.html" class="menu-link">
+
+                    <span>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        Services
+                    </span>
+
+                </a>
+
+                <i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+
+            </div>
+
+            <div class="dropdown-content">
+
+                <a href="civil.html">
+                    <i class="fa-solid fa-building"></i>
+                    Civil Construction
+                </a>
+
+                <a href="interior.html">
+                    <i class="fa-solid fa-couch"></i>
+                    Interior Work
+                </a>
+
+                <a href="exterior.html">
+                    <i class="fa-solid fa-house"></i>
+                    Exterior Work
+                </a>
+
+                <a href="electricalplumbing.html">
+                    <i class="fa-solid fa-bolt"></i>
+                    Electrical & Plumbing
+                </a>
+
+                <a href="renovation.html">
+                    <i class="fa-solid fa-hammer"></i>
+                    Renovation
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECTS -->
+
+        <div class="dropdown">
+
+            <div class="menu-item">
+
+                <a href="projects.html" class="menu-link">
+
+                    <span>
+                        <i class="fa-solid fa-building"></i>
+                        Projects
+                    </span>
+
+                </a>
+
+                <i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+
+            </div>
+
+            <div class="dropdown-content">
+
+                <a href="complete.html">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Completed
+                </a>
+
+                <a href="ongoing.html">
+                    <i class="fa-solid fa-spinner"></i>
+                    Ongoing
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="contact.html">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                Contact
+            </span>
+
+        </a>
+
+        <button onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </button>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="pageHeader">
+
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+            <div>
+                <h1>Manage Services</h1>
+
+                <p>
+                    Add, update and manage all service page content, service cards and key highlights.
+                </p>
+            </div>
+
+        </div>
+
+
+        <form id="serviceForm">
+
+            <!-- HERO -->
+
+            <div class="section">
+
+                <h2>Hero Section</h2>
+
+                <input type="text" id="heroTitle" placeholder="Hero Title">
+
+                <textarea id="heroSubtitle" placeholder="Hero Subtitle"></textarea>
+
+            </div>
+
+
+
+            <!-- INTRO -->
+
+            <div class="section">
+
+                <h2>Intro Section</h2>
+
+                <input type="text" id="introTitle" placeholder="Intro Title">
+
+                <textarea id="introDescription" placeholder="Intro Description"></textarea>
+
+            </div>
+
+
+
+            <!-- SERVICES -->
+            <div class="section">
+
+                <div class="top">
+
+                    <h2>Services</h2>
+
+                    <button type="button" id="addServiceBtn">
+
+                        +
+
+                    </button>
+
+                </div>
+
+                <div id="servicesContainer"></div>
+
+            </div>
+
+
+            <!-- WHY -->
+            <div class="section">
+
+                <div class="top">
+
+                    <h2>Why Choose</h2>
+
+                    <button type="button" id="addWhyBtn">
+
+                        +
+
+                    </button>
+
+                </div>
+
+                <div id="whyContainer"></div>
+
+            </div>
+
+            <button type="submit" class="saveBtn">
+
+                Save Changes
+
+            </button>
+
+        </form>
+
+
+
+        <!-- PREVIEW -->
+
+        <div class="sectionDivider">
+
+            <span>
+                <i class="fa-solid fa-eye"></i>
+                Services Page Preview
+            </span>
+
+        </div>
+
+        <div class="preview">
+
+            <div id="previewBox"></div>
+
+        </div>
+
+    </div>
+
+    <script src="service.js"></script>
+
+</body>
+
+</html>

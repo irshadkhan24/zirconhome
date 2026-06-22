@@ -1,0 +1,444 @@
+/* =========================
+   RESET
+========================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+background:#f4f6f9;
+display:flex;
+}
+
+/* =========================
+   MAIN
+========================= */
+.main{
+margin-left:190px;
+  width:calc(100% - 190px);
+  min-height:100vh;
+  padding:22px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container{
+  width:100%;
+  max-width:100%;
+  margin:0 auto;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+.title-bar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+/* =========================
+   HEADING
+========================= */
+.title-bar h1{
+font-size:42px;
+font-weight:700;
+color:#111827;
+}
+
+/* =========================
+   PAGE BUTTONS
+========================= */
+.page-links{
+display:flex;
+gap:12px;
+}
+
+/* COMMON BTN */
+.page-links button{
+border:none;
+padding:10px 14px;  
+border-radius:10px;
+font-size:12px;
+font-weight:600;
+cursor:pointer;
+color:#fff;
+transition:0.3s;
+min-width:125px;     
+}
+
+
+/* ELECTRICAL */
+.electrical-btn{
+background:#4A90E2;
+}
+
+.electrical-btn:hover{
+background:#3b7edb;
+transform:translateY(-2px);
+}
+
+/* PLUMBING */
+.plumbing-btn{
+background:#F47A20;
+}
+
+.plumbing-btn:hover{
+background:#d46e18;
+transform:translateY(-2px);
+}
+
+/* =========================
+   FORM
+========================= */
+form{
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.08);
+  width:100%;
+  max-width:650px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+form input,
+form textarea,
+form select{
+width:100%;
+padding:14px;
+margin-bottom:16px;
+border:1px solid #d1d5db;
+border-radius:8px;
+font-size:15px;
+background:#fff;
+transition:0.3s;
+}
+
+/* TEXTAREA */
+form textarea{
+height:70px;
+resize:none;
+}
+
+#description{
+height:70px;
+}
+#mainDescription{
+height:70px;
+}
+
+/* FOCUS */
+form input:focus,
+form textarea:focus,
+form select:focus{
+border-color:#f97316;
+outline:none;
+box-shadow:0 0 0 3px rgba(249,115,22,0.15);
+}
+
+/* =========================
+   SAVE BUTTON
+========================= */
+.form-btns button{
+background:#F47A20;
+color:white;
+border:none;
+padding:12px;
+width:100%;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+}
+
+.form-btns button:hover{
+background:#d86510;
+}
+
+/* =========================
+   DATA LIST
+========================= */
+#electricalplumbingList{
+margin-top:30px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:900px){
+
+.main{
+margin-left:0;
+padding:20px;
+}
+
+.title-bar{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+.page-links{
+width:100%;
+flex-direction:column;
+}
+
+.page-links button{
+width:100%;
+}
+
+.title-bar h1{
+font-size:32px;
+}
+
+form{
+max-width:100%;
+padding:22px;
+}
+
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card{
+background:#fff;
+padding:22px;
+border-radius:14px;
+margin-bottom:20px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+border-left:5px solid #F47A20;
+}
+
+.card-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:12px;
+}
+
+.card-top h2{
+font-size:22px;
+color:#111827;
+}
+
+.card-top span{
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:600;
+color:#fff;
+text-transform:capitalize;
+}
+
+.card-top .electrical{
+background:#4A90E2;
+}
+
+.card-top .plumbing{
+background:#F47A20;
+}
+
+.service-card h3{
+font-size:20px;
+margin-bottom:10px;
+color:#222;
+}
+
+.service-card p{
+color:#555;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+.card-btns{
+display:flex;
+gap:10px;
+margin-top:10px;
+}
+
+.edit-btn{
+background:#3498db;
+color:#fff;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+.delete-btn{
+background:#c0392b;
+color:#fff;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+.edit-btn:hover{
+background:#2980b9;
+}
+
+.delete-btn:hover{
+background:#992d22;
+}
+
+
+/* ALL CONTACT DETAILS HEADING */
+
+.details-heading{
+  font-size:24px;
+  font-weight:700;
+  color:#111;
+  margin-top:28px;
+  margin-bottom:22px;
+  position:relative;
+  padding-left:4px;
+}
+
+.details-heading::before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:75px;
+  height:3px;
+  background:#F47A20;
+  border-radius:10px;
+}
+
+.service-card strong{
+color:#111827;
+font-size:15px;
+}
+
+.service-card p{
+margin-bottom:6px;
+font-size:15px;
+line-height:1.4;
+color:#444;
+}
+
+@media(max-width:768px){
+
+  .main{
+    margin-left:170px;
+    width:calc(100% - 170px);
+    padding:15px;
+  }
+
+  form{
+    max-width:100%;
+  }
+}
+
+@media(max-width:550px){
+
+  body{
+    flex-direction:column;
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+    padding:14px;
+  }
+}
+
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.pageHeader{
+    background:#fff;
+    padding:25px 30px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    border-left:5px solid #F47A20;
+}
+
+.pageHeader h1{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:30px;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.pageHeader h1 i{
+    color:#F47A20;
+}
+
+.pageHeader p{
+    color:#6b7280;
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* =========================
+   PREVIEW DIVIDER
+========================= */
+
+.previewDivider{
+    max-width:100%;
+    margin:45px auto 30px;
+    text-align:center;
+    position:relative;
+}
+
+.previewDivider::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:3px;
+    border-radius:50px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #4A90E2,
+        #F47A20,
+        #4A90E2,
+        transparent
+    );
+}
+
+.previewDivider span{
+    position:relative;
+    z-index:2;
+    background:#fff;
+    padding:10px 24px;
+    border-radius:50px;
+    border:1px solid #dbeafe;
+    color:#1e3a5f;
+    font-size:15px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.previewDivider i{
+    color:#F47A20;
+}
+
+

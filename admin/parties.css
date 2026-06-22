@@ -1,0 +1,292 @@
+/* Page Background */
+body {
+    background: #f4f6fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main Form Section */
+.main{
+    margin-left:190px;
+    width:calc(100% - 190px);
+    min-height:100vh;
+    padding:22px;
+}
+
+/* Form Box */
+form{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+
+    width:100%;
+    max-width:650px;
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* Inputs */
+form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Button */
+form button {
+    background: #F47A20;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #d96512;
+}
+
+/* Parties Title */
+h3 {
+    margin-top: 20px;
+
+}
+.main h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Party Card */
+.party-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.party-card:hover{
+    transform: translateY(-5px);
+}
+
+/* Logo */
+.party-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Company Name */
+.party-card h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Buttons */
+.party-card button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Edit button */
+.party-card button:first-of-type {
+    background: #3498db;
+    color: white;
+    margin-right: 12px; /* gap between buttons */
+}
+
+/* Delete button */
+.party-card button:last-of-type {
+    background: #c0392b;
+    color: white;
+}
+
+/* Hover */
+.party-card button:first-of-type:hover {
+    background: #2980b9;
+}
+
+.party-card button:last-of-type:hover {
+    background: #992d22;
+}
+
+#partyList {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    #partyList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    #partyList {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sectionTitle{
+  font-size:24px;
+  font-weight:700;
+  color:#111;
+  margin:30px 0 20px;
+  position:relative;
+  padding-left:4px;
+}
+
+.sectionTitle::before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:75px;
+  height:3px;
+  background:#F47A20;
+  border-radius:10px;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.pageHeader{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#fff;
+    padding:22px 26px;
+    border-radius:16px;
+    margin-bottom:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    border-left:5px solid #F47A20;
+}
+
+.pageHeader i{
+    font-size:32px;
+    color:#F47A20;
+}
+
+.pageHeader h1{
+    margin:0;
+    font-size:26px;
+    color:#0f172a;
+    font-weight:700;
+}
+
+.pageHeader p{
+    margin-top:5px;
+    color:#64748b;
+    font-size:14px;
+}
+
+
+/* =========================
+   PREVIEW DIVIDER
+========================= */
+
+.sectionDivider{
+    max-width:100%;
+    margin:45px auto 30px;
+    text-align:center;
+    position:relative;
+}
+
+.sectionDivider::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:3px;
+    border-radius:50px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #4A90E2,
+        #F47A20,
+        #4A90E2,
+        transparent
+    );
+}
+
+.sectionDivider span{
+    position:relative;
+    z-index:2;
+    background:#fff;
+    padding:10px 24px;
+    border-radius:50px;
+    border:1px solid #dbeafe;
+    color:#1e3a5f;
+    font-size:15px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.sectionDivider i{
+    color:#F47A20;
+}
+
+
+@media(max-width:768px){
+
+    .sidebar{
+        width:170px;
+    }
+
+    .main{
+        margin-left:170px;
+        width:calc(100% - 170px);
+        padding:15px;
+    }
+
+    form{
+        max-width:100%;
+    }
+
+    #partyList{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:550px){
+
+    body{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+        padding:14px;
+    }
+
+    #partyList{
+        grid-template-columns:1fr;
+    }
+}

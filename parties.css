@@ -1,0 +1,273 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #222;
+  overflow-y: auto; /* ✅ enable vertical scroll */
+}
+
+.clients-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.clients-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #F47A20;
+}
+
+.clients-section h2 span {
+  color: #4A90E2;
+}
+
+.clients-section p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Client logos */
+.client-logo {
+  width: 160px;
+  height: 100px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0; /* Hidden initially for animation */
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+  cursor: pointer;
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.client-logo:hover img {
+  transform: scale(1.1);
+}
+
+/* Scroll reveal active state */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .clients-section h2 {
+    font-size: 28px;
+  }
+
+  .client-logo {
+    width: 130px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-grid {
+    gap: 20px;
+  }
+
+  .client-logo {
+    width: 100px;
+    height: 80px;
+  }
+}
+
+
+/* Footer Animation & Logic */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* 🔥 3 equal columns */
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.footer h3,
+.footer h4 {
+  color: #F47A20;
+  margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #F47A20;
+}
+
+/* SOCIAL ICON */
+.footer-social-parties a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-social-parties a i {
+  font-size: 18px;
+  color: #4A90E2;
+  transition: 0.3s;
+}
+
+.footer-social-parties a:hover i {
+  color: #F47A20;
+}
+
+/* Glow Border */
+.footer-social-parties a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(120deg, #4A90E2, #F47A20, #4A90E2);
+  background-size: 300% 300%;
+  animation: glowMove 4s linear infinite;
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+/* Divider */
+.footer-divider {
+  width: 80%;
+  height: 1px;
+  margin: 30px auto;
+  background: linear-gradient(to right, transparent, #4A90E2, #F47A20, transparent);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.footer-bottom span {
+  color: #F47A20;
+}
+
+/* Animation inside footer */
+.footer-left,
+.footer-center,
+.footer-right,
+.footer-bottom {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.footer.show .footer-left {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.footer.show .footer-center {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.footer.show .footer-right {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.footer.show .footer-bottom {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+/* Animation */
+@keyframes glowMove {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ul dot not show using this */
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Reveal from center */
+.reveal-center {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease;
+}
+
+.reveal-center.active {
+  opacity: 1;
+  transform: scale(1);
+}

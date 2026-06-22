@@ -1,0 +1,315 @@
+/* ===== BASE ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+display:flex;
+background:#f5f5f5;
+overflow-x:hidden;
+}
+
+/* ===== MAIN ===== */
+
+.main{
+margin-left:220px;
+padding:25px;
+width:100%;
+min-height:100vh;
+}
+
+/* ===== HEADING ===== */
+
+.main h1{
+font-size:34px;
+margin-bottom:25px;
+color:#222;
+}
+
+/* ===== FORM ===== */
+
+.project-form{
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+gap:15px;
+max-width:700px;
+margin-bottom:35px;
+}
+
+/* ===== INPUTS ===== */
+
+.project-form input,
+.project-form textarea{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+outline:none;
+transition:0.3s;
+background:#fff;
+}
+
+/* ===== TEXTAREA ===== */
+
+.project-form textarea{
+height:120px;
+resize:none;
+}
+
+/* ===== FOCUS ===== */
+
+.project-form input:focus,
+.project-form textarea:focus{
+border-color:#F47A20;
+box-shadow:0 0 5px rgba(244,122,32,0.25);
+}
+
+/* ===== BUTTON INPUTS ===== */
+
+.btn-fields{
+display:flex;
+gap:12px;
+}
+
+.btn-fields input{
+flex:1;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+
+.project-form button[type="submit"]{
+background:#F47A20;
+color:#fff;
+border:none;
+padding:12px;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+}
+
+.project-form button[type="submit"]:hover{
+background:#d96512;
+}
+
+/* ================================================= */
+/* ===== PROJECT CARDS ===== */
+/* ================================================= */
+
+.project-cards{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:22px;
+margin-top:10px;
+}
+
+/* ===== SINGLE CARD ===== */
+
+.project-card{
+background:#fff;
+border-radius:14px;
+padding:18px;
+border:1px solid #ececec;
+box-shadow:0 4px 12px rgba(0,0,0,0.07);
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 24px rgba(0,0,0,0.1);
+}
+
+/* ===== CONTENT ===== */
+
+.project-card-content{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+/* ===== TEXT BOX ===== */
+
+.project-card-content p{
+background:#f8f8f8;
+padding:12px;
+border-radius:8px;
+font-size:14px;
+line-height:1.6;
+color:#444;
+word-break:break-word;
+}
+
+/* ===== LABEL ===== */
+
+.project-card-content b{
+display:block;
+margin-bottom:4px;
+font-size:13px;
+color:#F47A20;
+}
+
+/* ===== BUTTON AREA ===== */
+
+.card-buttons{
+display:flex;
+gap:10px;
+margin-top:8px;
+}
+
+/* ===== BUTTON ===== */
+
+.card-buttons button{
+flex:1;
+padding:10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:13px;
+font-weight:600;
+transition:0.3s;
+}
+
+/* ===== EDIT ===== */
+
+.edit-btn{
+background:#3498db;
+color:#fff;
+}
+
+.edit-btn:hover{
+background:#2980b9;
+}
+
+/* ===== DELETE ===== */
+
+.delete-btn{
+background:#e74c3c;
+color:#fff;
+}
+
+.delete-btn:hover{
+background:#c0392b;
+}
+
+/* ================================================= */
+/* ===== RESPONSIVE ===== */
+/* ================================================= */
+
+@media(max-width:768px){
+
+.main{
+margin-left:0;
+padding:18px;
+}
+
+.project-form{
+max-width:100%;
+}
+
+.btn-fields{
+flex-direction:column;
+}
+
+.project-cards{
+grid-template-columns:1fr;
+}
+
+}
+
+.pageHeader{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    border-left:6px solid #F47A20;
+}
+
+.headerIcon{
+    width:70px;
+    height:70px;
+    border-radius:15px;
+    background:rgba(244,122,32,.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.headerIcon i{
+    font-size:32px;
+    color:#F47A20;
+}
+
+.pageHeader h1{
+    margin:0;
+    font-size:40px;
+    color:#0f172a;
+}
+
+.pageHeader p{
+    margin-top:8px;
+    color:#64748b;
+    font-size:16px;
+}
+
+
+/* =========================
+   PREVIEW DIVIDER
+========================= */
+
+.sectionDivider{
+    max-width:100%;
+    margin:45px auto 30px;
+    text-align:center;
+    position:relative;
+}
+
+.sectionDivider::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:3px;
+    border-radius:50px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #4A90E2,
+        #F47A20,
+        #4A90E2,
+        transparent
+    );
+}
+
+.sectionDivider span{
+    position:relative;
+    z-index:2;
+    background:#fff;
+    padding:10px 24px;
+    border-radius:50px;
+    border:1px solid #dbeafe;
+    color:#1e3a5f;
+    font-size:15px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.sectionDivider i{
+    color:#F47A20;
+}

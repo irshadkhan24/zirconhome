@@ -1,0 +1,466 @@
+/* ================= Header ================= */
+header {
+  text-align: center;
+  margin: 50px 0 30px;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  color: #F47A20;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+header h1::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #F47A20;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ================= Container ================= */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 0 80px 60px;  
+}
+
+/* ================= Card ================= */
+.project-card {
+  display: flex;
+  gap: 50px;   
+  align-items: center;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Alternate layout */
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ================= IMAGE ================= */
+.project-image {
+  flex: 0.7;
+  height: 350px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  clip-path: inset(0 100% 0 0); /* initial hide */
+  transition: clip-path 1.4s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.project-card.show .project-image {
+  clip-path: inset(0 0 0 0);
+}
+
+/* reverse animation */
+.project-card.reverse .project-image {
+  clip-path: inset(0 0 0 100%);
+}
+
+.project-card.reverse.show .project-image {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Image */
+.project-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+
+  transform: scale(1.1); /* start zoomed */
+  transition: transform 1.5s ease;
+}
+
+.project-card.show .project-image img {
+  transform: scale(1);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* ================= CONTENT ================= */
+.project-content {
+  flex: 0.7;
+  padding: 30px;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.project-card.show .project-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Heading animation */
+.project-content h2 {
+  color: #F47A20;
+  margin-bottom: 15px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.project-card.show .project-content h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+/* Text animation */
+.project-content p {
+  margin: 6px 0;
+  color: #444;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+/* Staggered reveal */
+.project-card.show .project-content p:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.project-card.show .project-content p:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+.project-card.show .project-content p:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+
+.project-card.show .project-content p:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.1s;
+}
+
+/* Highlighted span */
+.project-content span {
+  font-weight: 600;
+  color: #4A90E2;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+  .project-card,
+  .project-card.reverse {
+    flex-direction: column;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/* ================= Load More Button ================= */
+.load-more-container {
+  text-align: center;
+  margin-top: -10px;  /* negative margin se button ko upar le jao */
+  margin-bottom: 30px; /* footer se distance maintain */
+}
+
+/* Button styling */
+#load-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* icon-text gap */
+  padding: 8px 18px; /* button size */
+  border: none;
+  background: linear-gradient(135deg, #4A90E2, #6aa8f5); /* default blue */
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(74,144,226,0.25);
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+/* Icon inside button */
+#load-more-btn i {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect - dark blue gradient */
+#load-more-btn:hover {
+  background: linear-gradient(135deg, #3b78c1, #5a91e0); /* darker blue */
+}
+
+#load-more-btn:hover i {
+  transform: translateX(5px); /* arrow slides on hover */
+}
+
+
+
+/* ================= BACK BUTTON ================= */
+.back-btn-container {
+  text-align: left;
+  margin: 30px 0; /* compact spacing */
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: left;
+  justify-content: left; /* icon + text center */
+  gap: 6px; /* icon-text gap */
+  padding: 4px 8px; /* compact */
+  text-decoration: none;
+  background: linear-gradient(135deg, #F47A20, #ff9a4d); /* original orange */
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(74,144,226,0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+/* Icon left side */
+.back-btn .icon i {
+  font-size: 1rem;
+  transition: transform 0.3s ease; /* sirf icon animate */
+}
+
+/* Text static */
+.back-btn .text {
+  transition: none;
+}
+
+/* Hover effect: ONLY background darker + icon slide */
+.back-btn:hover {
+  background: linear-gradient(135deg, #d46e18, #e07b39); /* slightly darker orange */
+}
+
+.back-btn:hover .icon i {
+  transform: translateX(4px); /* icon slides on hover */
+}
+
+
+
+
+
+/* Footer Animation & Logic */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* 🔥 3 equal columns */
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.footer h3,
+.footer h4 {
+  color: #F47A20;
+  margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #F47A20;
+}
+
+/* SOCIAL ICON */
+.footer-social-parties a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-social-parties a i {
+  font-size: 18px;
+  color: #4A90E2;
+  transition: 0.3s;
+}
+
+.footer-social-parties a:hover i {
+  color: #F47A20;
+}
+
+/* Glow Border */
+.footer-social-parties a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(120deg, #4A90E2, #F47A20, #4A90E2);
+  background-size: 300% 300%;
+  animation: glowMove 4s linear infinite;
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+/* Divider */
+.footer-divider {
+  width: 80%;
+  height: 1px;
+  margin: 30px auto;
+  background: linear-gradient(to right, transparent, #4A90E2, #F47A20, transparent);
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.footer-bottom span {
+  color: #F47A20;
+}
+
+/* Animation inside footer */
+.footer-left,
+.footer-center,
+.footer-right,
+.footer-bottom {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.footer.show .footer-left {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.footer.show .footer-center {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.footer.show .footer-right {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.footer.show .footer-bottom {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+/* Animation */
+@keyframes glowMove {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ul dot not show using this */
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Reveal from center */
+.reveal-center {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease;
+}
+
+.reveal-center.active {
+  opacity: 1;
+  transform: scale(1);
+}
+/* ================= BUTTON SCROLL ANIMATION ================= */
+
+.load-more-container,
+.back-btn-container {
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  transition: all 0.8s ease;
+
+}
+
+.load-more-container.show,
+.back-btn-container.show {
+
+  opacity: 1;
+  transform: translateY(0);
+
+}

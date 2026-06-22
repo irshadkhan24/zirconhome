@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home Management</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="admindashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  
+
+  <div class="sidebar">
+    <div class="logo">
+      <img src="../images/zhlogo.png">
+      <h2>Zircon Home</h2>
+    </div>
+    <a href="admindashboard.html" class="active">
+      <span><i class="fa-solid fa-gauge"></i> Dashboard</span>
+    </a>
+    <a href="home.html">
+      <span><i class="fa-solid fa-house"></i> Home</span>
+    </a>
+    <a href="about.html">
+      <span><i class="fa-solid fa-circle-info"></i> About</span>
+    </a>
+    <a href="testimonials.html">
+      <span><i class="fa-solid fa-star"></i> Testimonials</span>
+    </a>
+    <a href="parties.html">
+      <span><i class="fa-solid fa-handshake"></i> Parties</span>
+    </a>
+    <div class="dropdown">
+      <div class="menu-item">
+        <a href="service.html" class="menu-link">
+          <span><i class="fa-solid fa-screwdriver-wrench"></i> Services</span>
+        </a>
+        <i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+      </div>
+      <div class="dropdown-content">
+        <a href="civil.html"><i class="fa-solid fa-building"></i> Civil Construction</a>
+        <a href="interior.html"><i class="fa-solid fa-couch"></i> Interior Work</a>
+        <a href="exterior.html"><i class="fa-solid fa-house"></i> Exterior Work</a>
+        <a href="electricalplumbing.html"><i class="fa-solid fa-bolt"></i> Electrical & Plumbing</a>
+        <a href="renovation.html"><i class="fa-solid fa-hammer"></i> Renovation</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <div class="menu-item">
+        <a href="projects.html" class="menu-link">
+          <span><i class="fa-solid fa-building"></i> Projects</span>
+        </a>
+        <i class="fa-solid fa-chevron-down arrow dropdown-toggle"></i>
+      </div>
+      <div class="dropdown-content">
+        <a href="complete.html"><i class="fa-solid fa-circle-check"></i> Completed</a>
+        <a href="ongoing.html"><i class="fa-solid fa-spinner"></i> Ongoing</a>
+      </div>
+    </div>
+    <a href="contact.html">
+      <span><i class="fa-solid fa-envelope"></i> Contact</span>
+    </a>
+    <button onclick="logout()">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </button>
+  </div>
+
+  <div class="dashboard">
+
+    <div class="pageHeader">
+      <div>
+        <h1><i class="fa-solid fa-house"></i> Home Page Management</h1>
+        <p>Manage all homepage sections — hero slides, about, stats, parties, presence, and footer.</p>
+      </div>
+      <a href="admindashboard.html" class="dashboardBtn">
+        <i class="fa-solid fa-gauge"></i> Dashboard
+      </a>
+    </div>
+
+    <form id="homeForm">
+      <div class="homeContainer">
+
+        
+
+        <div class="card">
+          <div class="cardHeader">
+            <i class="fa-solid fa-images"></i> Hero Slides
+          </div>
+          <div id="slidesContainer"></div>
+          <button type="button" id="addSlideBtn" class="addBtn">
+            <i class="fa-solid fa-plus"></i> Add Slide
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="cardHeader">
+            <i class="fa-solid fa-circle-info"></i> About Section
+          </div>
+          <div class="grid2">
+            <input type="text" id="aboutTitle" placeholder="About Title">
+            <input type="text" id="aboutSubTitle" placeholder="About Subtitle">
+          </div>
+          <input type="file" id="aboutImage" accept="image/*">
+          <textarea id="aboutDescription" rows="6" placeholder="About Description"></textarea>
+          <img id="aboutPreview" src="" alt="Preview">
+        </div>
+
+        <div class="card">
+          <div class="cardHeader">
+            <i class="fa-solid fa-chart-column"></i> Stats Section
+          </div>
+          <input type="text" id="statsTitle" placeholder="Stats Title">
+          <input type="text" id="statsSubtitle" placeholder="Stats Subtitle">
+          <textarea id="statsDescription" rows="4" placeholder="Stats Description"></textarea>
+          <hr>
+          <h3>Stats Boxes</h3>
+          <div id="statsContainer"></div>
+          <button type="button" id="addStatBtn" class="addBtn">
+            <i class="fa-solid fa-plus"></i> Add Stat
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="cardHeader">
+            <i class="fa-solid fa-handshake"></i> Parties & Partners
+          </div>
+          <div class="grid2">
+            <input type="text" id="partiesTitle" placeholder="Parties Title">
+            <input type="text" id="partiesSubTitle" placeholder="Parties Subtitle">
+          </div>
+          <hr>
+          <h3>Company Logos</h3>
+          <div id="partiesContainer"></div>
+          <button type="button" id="addPartyBtn" class="addBtn">
+            <i class="fa-solid fa-plus"></i> Add Party
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="cardHeader">
+            <i class="fa-solid fa-location-dot"></i> Presence Section
+          </div>
+          <div class="grid2">
+            <input type="text" id="presenceTitle" placeholder="Presence Title">
+            <input type="text" id="presenceSubTitle" placeholder="Presence Subtitle">
+          </div>
+          <hr>
+          <h3>Google Map</h3>
+          <input type="text" id="mapEmbedUrl" placeholder="Google Map Embed URL">
+          <hr>
+          <h3>Map Markers</h3>
+          <div id="presenceContainer"></div>
+          <button type="button" id="addPresenceBtn" class="addBtn">
+            <i class="fa-solid fa-plus"></i> Add City
+          </button>
+          <hr>
+          <h3>State Information</h3>
+          <textarea id="statePresence" rows="6" placeholder="Maharashtra: Mumbai, Pune, Thane"></textarea>
+        </div>
+
+        <div class="card">
+          <div class="cardHeader">
+            <i class="fa-solid fa-link"></i> Footer Section
+          </div>
+          <input type="text" id="footerTopSmallTitle" placeholder="Small Heading (e.g. BUILDING EXCELLENCE)">
+          <input type="text" id="footerTopMainTitle" placeholder="Main Heading">
+          <textarea id="footerDescription" rows="5" placeholder="Footer Description"></textarea>
+          <hr>
+          <h3>Project Button</h3>
+          <div class="grid2">
+            <input type="text" id="projectBtnText" placeholder="Button Text">
+            <input type="text" id="projectBtnLink" placeholder="Button Link">
+          </div>
+          <hr>
+          <h3>Social Media Links</h3>
+          <div class="grid2">
+            <input type="text" id="facebook" placeholder="Facebook URL">
+            <input type="text" id="twitter" placeholder="Twitter / X URL">
+          </div>
+          <div class="grid2">
+            <input type="text" id="instagram" placeholder="Instagram URL">
+            <input type="text" id="linkedin" placeholder="LinkedIn URL">
+          </div>
+          <input type="text" id="youtube" placeholder="YouTube URL">
+          <hr>
+          <h3>Footer Navigation Links</h3>
+          <p style="font-size:13px;color:#6b7280;margin-bottom:12px;">
+            Add links for columns 1–4 in the footer. Each link needs a column number, icon class, title, and URL.
+          </p>
+          <div id="footerLinksContainer"></div>
+          <button type="button" id="addFooterLinkBtn" class="addBtn" style="margin-top:10px;">
+            <i class="fa-solid fa-plus"></i> Add Footer Link
+          </button>
+          <hr>
+          <input type="text" id="copyrightText" placeholder="Copyright Text (e.g. © 2026 Zircon Home)">
+        </div>
+
+        <div class="bottomBar">
+          <button type="submit" class="saveBtn">
+            <i class="fa-solid fa-floppy-disk"></i> Save Home Data
+          </button>
+        </div>
+
+      </div>
+    </form>
+<div class="previewDivider">
+    <span>
+        <i class="fa-solid fa-layer-group"></i>
+        Saved Homepage Data Preview
+    </span>
+</div>
+    <div style="max-width:1050px; margin:0 auto 40px 0;">
+      <div id="dataPreviewSection"></div>
+    </div>
+
+  </div>
+
+  <script src="home.js"></script>
+  
+
+</body>
+
+</html>
