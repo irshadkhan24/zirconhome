@@ -120,7 +120,7 @@ function createImageBox(file){
 async function loadCivilWorks() {
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/civil"
+    "https://zirconhome.onrender.com/api/civil"
   );
 
   const data = await res.json();
@@ -177,7 +177,7 @@ async function loadCivilWorks() {
         <div class="previewCard">
 
           <img
-            src="http://zirconhome.onrender.com${img.image}"
+            src="https://zirconhome.onrender.com${img.image}"
           >
 
           <h4>${img.title || ""}</h4>
@@ -282,7 +282,7 @@ document.querySelectorAll(".imgDetailBox")
 
 
   let url =
-  "http://zirconhome.onrender.com/api/civil/add";
+  "https://zirconhome.onrender.com/api/civil/add";
 
   let method = "POST";
 
@@ -290,7 +290,7 @@ document.querySelectorAll(".imgDetailBox")
   if(editId){
 
     url =
-    `http://zirconhome.onrender.com/api/civil/${editId}`;
+    `https://zirconhome.onrender.com/api/civil/${editId}`;
 
     method = "PUT";
 
@@ -323,7 +323,7 @@ console.log(result);
 async function deleteCivil(id){
 
   await fetch(
-    `http://zirconhome.onrender.com/api/civil/${id}`,
+    `https://zirconhome.onrender.com/api/civil/${id}`,
     {
       method:"DELETE"
     }
@@ -338,7 +338,7 @@ async function deleteCivil(id){
 async function editCivil(id){
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/civil"
+    "https://zirconhome.onrender.com/api/civil"
   );
 
   const data = await res.json();
@@ -391,7 +391,7 @@ async function editCivil(id){
       <div class="fileName">
 
         <img
-          src="http://zirconhome.onrender.com${img.image}"
+          src="https://zirconhome.onrender.com${img.image}"
           style="
             width:120px;
             height:80px;

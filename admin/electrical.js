@@ -120,7 +120,7 @@ function createImageBox(file){
 async function loadElectricalWorks() {
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/electrical"
+    "https://zirconhome.onrender.com/api/electrical"
   );
 
   const data = await res.json();
@@ -176,7 +176,7 @@ async function loadElectricalWorks() {
         <div class="previewCard">
 
           <img
-            src="http://zirconhome.onrender.com${img.image}"
+            src="https://zirconhome.onrender.com${img.image}"
           >
 
           <h4>${img.title || ""}</h4>
@@ -276,7 +276,7 @@ formData.append(
 
 
   let url =
-  "http://zirconhome.onrender.com/api/electrical/add";
+  "https://zirconhome.onrender.com/api/electrical/add";
 
   let method = "POST";
 
@@ -284,7 +284,7 @@ formData.append(
   if(editId){
 
     url =
-    `http://zirconhome.onrender.com/api/electrical/${editId}`;
+    `https://zirconhome.onrender.com/api/electrical/${editId}`;
 
     method = "PUT";
 
@@ -313,7 +313,7 @@ formData.append(
 async function deleteElectrical(id){
 
   await fetch(
-    `http://zirconhome.onrender.com/api/electrical/${id}`,
+    `https://zirconhome.onrender.com/api/electrical/${id}`,
     {
       method:"DELETE"
     }
@@ -328,7 +328,7 @@ async function deleteElectrical(id){
 async function editElectrical(id){
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/electrical"
+    "https://zirconhome.onrender.com/api/electrical"
   );
 
   const data = await res.json();
@@ -380,7 +380,7 @@ async function editElectrical(id){
       <div class="fileName">
 
         <img
-          src="http://zirconhome.onrender.com${img.image}"
+          src="https://zirconhome.onrender.com${img.image}"
           style="
             width:120px;
             height:80px;

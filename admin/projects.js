@@ -1,4 +1,4 @@
-const API = "http://zirconhome.onrender.com/api/projects";
+const API = "https://zirconhome.onrender.com/api/projects";
 
 const form = document.getElementById("projectForm");
 

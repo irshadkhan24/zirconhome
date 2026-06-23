@@ -81,7 +81,7 @@ item.image
 `
 <div class="about-image-box">
 
-<img src="http://zirconhome.onrender.com${item.image}">
+<img src="https://zirconhome.onrender.com${item.image}">
 
 ${
 section === "about"

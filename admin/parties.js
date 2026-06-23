@@ -1,4 +1,4 @@
-const api="http://zirconhome.onrender.com/api/parties"
+const api="https://zirconhome.onrender.com/api/parties"
 
 const form=document.getElementById("partyForm")
 const partyList=document.getElementById("partyList")
@@ -21,7 +21,7 @@ partyList.innerHTML+=`
 
 <div class="party-card">
 
-<img src="http://zirconhome.onrender.com${p.logo}" width="80">
+<img src="https://zirconhome.onrender.com${p.logo}" width="80">
 
 <h4>${p.name}</h4>
 

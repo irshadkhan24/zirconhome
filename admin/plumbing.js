@@ -120,7 +120,7 @@ function createImageBox(file){
 async function loadPlumbingWorks() {
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/plumbing"
+    "https://zirconhome.onrender.com/api/plumbing"
   );
 
   const data = await res.json();
@@ -176,7 +176,7 @@ async function loadPlumbingWorks() {
         <div class="previewCard">
 
           <img
-            src="http://zirconhome.onrender.com${img.image}"
+            src="https://zirconhome.onrender.com${img.image}"
           >
 
           <h4>${img.title || ""}</h4>
@@ -278,7 +278,7 @@ formData.append(
   
 
   let url =
-  "http://zirconhome.onrender.com/api/plumbing/add";
+  "https://zirconhome.onrender.com/api/plumbing/add";
 
   let method = "POST";
 
@@ -286,7 +286,7 @@ formData.append(
   if(editId){
 
     url =
-    `http://zirconhome.onrender.com/api/plumbing/${editId}`;
+    `https://zirconhome.onrender.com/api/plumbing/${editId}`;
 
     method = "PUT";
 
@@ -315,7 +315,7 @@ formData.append(
 async function deletePlumbing(id){
 
   await fetch(
-    `http://zirconhome.onrender.com/api/plumbing/${id}`,
+    `https://zirconhome.onrender.com/api/plumbing/${id}`,
     {
       method:"DELETE"
     }
@@ -330,7 +330,7 @@ async function deletePlumbing(id){
 async function editPlumbing(id){
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/plumbing"
+    "https://zirconhome.onrender.com/api/plumbing"
   );
 
   const data = await res.json();
@@ -382,7 +382,7 @@ async function editPlumbing(id){
       <div class="fileName">
 
         <img
-          src="http://zirconhome.onrender.com${img.image}"
+          src="https://zirconhome.onrender.com${img.image}"
           style="
             width:120px;
             height:80px;

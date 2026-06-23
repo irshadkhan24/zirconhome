@@ -123,7 +123,7 @@ function createImageBox(file){
 async function loadExteriorWorks() {
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/exterior"
+    "https://zirconhome.onrender.com/api/exterior"
   );
 
   const data = await res.json();
@@ -179,7 +179,7 @@ async function loadExteriorWorks() {
         <div class="previewCard">
 
           <img
-            src="http://zirconhome.onrender.com${img.image}"
+            src="https://zirconhome.onrender.com${img.image}"
           >
 
           <h4>${img.title || ""}</h4>
@@ -286,7 +286,7 @@ formData.append(
 
 
   let url =
-  "http://zirconhome.onrender.com/api/exterior/add";
+  "https://zirconhome.onrender.com/api/exterior/add";
 
   let method = "POST";
 
@@ -294,7 +294,7 @@ formData.append(
   if(editId){
 
     url =
-    `http://zirconhome.onrender.com/api/exterior/${editId}`;
+    `https://zirconhome.onrender.com/api/exterior/${editId}`;
 
     method = "PUT";
 
@@ -323,7 +323,7 @@ formData.append(
 async function deleteExterior(id){
 
   await fetch(
-    `http://zirconhome.onrender.com/api/exterior/${id}`,
+    `https://zirconhome.onrender.com/api/exterior/${id}`,
     {
       method:"DELETE"
     }
@@ -338,7 +338,7 @@ async function deleteExterior(id){
 async function editExterior(id){
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/exterior"
+    "https://zirconhome.onrender.com/api/exterior"
   );
 
   const data = await res.json();
@@ -390,7 +390,7 @@ async function editExterior(id){
       <div class="fileName">
 
         <img
-          src="http://zirconhome.onrender.com${img.image}"
+          src="https://zirconhome.onrender.com${img.image}"
           style="
             width:120px;
             height:80px;

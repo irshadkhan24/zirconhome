@@ -34,7 +34,7 @@ document.getElementById(
 // PARTIES
 
 const res2 = await fetch(
-"http://zirconhome.onrender.com/api/parties"
+"https://zirconhome.onrender.com/api/parties"
 );
 
 const parties = await res2.json();

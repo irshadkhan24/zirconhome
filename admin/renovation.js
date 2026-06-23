@@ -120,7 +120,7 @@ function createImageBox(file){
 async function loadRenovationWorks() {
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/renovation"
+    "https://zirconhome.onrender.com/api/renovation"
   );
 
   const data = await res.json();
@@ -176,7 +176,7 @@ async function loadRenovationWorks() {
         <div class="previewCard">
 
           <img
-            src="http://zirconhome.onrender.com${img.image}"
+            src="https://zirconhome.onrender.com${img.image}"
           >
 
           <h4>${img.title || ""}</h4>
@@ -282,7 +282,7 @@ formData.append(
 
 
   let url =
-  "http://zirconhome.onrender.com/api/renovation/add";
+  "https://zirconhome.onrender.com/api/renovation/add";
 
   let method = "POST";
 
@@ -290,7 +290,7 @@ formData.append(
   if(editId){
 
     url =
-    `http://zirconhome.onrender.com/api/renovation/${editId}`;
+    `https://zirconhome.onrender.com/api/renovation/${editId}`;
 
     method = "PUT";
 
@@ -319,7 +319,7 @@ formData.append(
 async function deleteRenovation(id){
 
   await fetch(
-    `http://zirconhome.onrender.com/api/renovation/${id}`,
+    `https://zirconhome.onrender.com/api/renovation/${id}`,
     {
       method:"DELETE"
     }
@@ -334,7 +334,7 @@ async function deleteRenovation(id){
 async function editRenovation(id){
 
   const res = await fetch(
-    "http://zirconhome.onrender.com/api/renovation"
+    "https://zirconhome.onrender.com/api/renovation"
   );
 
   const data = await res.json();
@@ -386,7 +386,7 @@ async function editRenovation(id){
       <div class="fileName">
 
         <img
-          src="http://zirconhome.onrender.com${img.image}"
+          src="https://zirconhome.onrender.com${img.image}"
           style="
             width:120px;
             height:80px;
