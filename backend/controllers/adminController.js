@@ -77,7 +77,7 @@ exports.forgetPassword = async (req, res) => {
     await admin.save();
 
     const resetURL =
-      `http://localhost:5500/resetpassword.html?token=${resetToken}`;
+      `https://zirconhome.onrender.com/resetpassword.html?token=${resetToken}`;
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -112,12 +112,12 @@ exports.forgetPassword = async (req, res) => {
     });
 
   } catch (error) {
+  console.log("Forgot Password Error:", error);
 
-    res.status(500).json({
-      message: "Server Error"
-    });
-
-  }
+  res.status(500).json({
+    message: error.message
+  });
+}
 
 };
 
