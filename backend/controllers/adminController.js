@@ -39,13 +39,14 @@ exports.loginAdmin = async (req, res) => {
 
     res.json({ token });
 
-  } catch (error) {
+  } 
+   catch (error) {
+  console.error("Forget Password Error:", error);
 
-    res.status(500).json({
-      message: "Server Error"
-    });
-
-  }
+  res.status(500).json({
+    message: error.message
+  });
+}
 
 };
 
@@ -77,8 +78,7 @@ exports.forgetPassword = async (req, res) => {
     await admin.save();
 
     const resetURL =
-      `https://zirconhome.onrender.com/resetpassword.html?token=${resetToken}`;
-
+`https://zirconhome.com/resetpassword.html?token=${resetToken}`;
     const transporter = nodemailer.createTransport({
       service: "gmail",
 
@@ -161,11 +161,11 @@ exports.resetPassword = async (req, res) => {
 
   } 
   catch (error) {
+  console.error("Forget Password Error:", error);
 
-    res.status(500).json({
-      message: "Server Error"
-    });
-
-  }
+  res.status(500).json({
+    message: error.message
+  });
+}
 
 };
