@@ -21,7 +21,7 @@ try{
 // TESTIMONIALS
 
 const res = await fetch(
-"http://localhost:5000/api/testimonials"
+"http://zirconhome.onrender.com/api/testimonials"
 );
 
 const data = await res.json();
@@ -34,7 +34,7 @@ document.getElementById(
 // PARTIES
 
 const res2 = await fetch(
-"http://localhost:5000/api/parties"
+"http://zirconhome.onrender.com/api/parties"
 );
 
 const parties = await res2.json();
@@ -47,7 +47,7 @@ document.getElementById(
 // COMPLETED
 
 const res4 = await fetch(
-"http://localhost:5000/api/complete"
+"http://zirconhome.onrender.com/api/complete"
 );
 
 const completes = await res4.json();
@@ -60,7 +60,7 @@ document.getElementById(
 // ONGOING
 
 const res5 = await fetch(
-"http://localhost:5000/api/ongoing"
+"http://zirconhome.onrender.com/api/ongoing"
 );
 
 const ongoings = await res5.json();
@@ -73,7 +73,7 @@ document.getElementById(
 // CIVIL
 
 const civilRes = await fetch(
-"http://localhost:5000/api/civil"
+"http://zirconhome.onrender.com/api/civil"
 );
 
 const civilData = await civilRes.json();
@@ -82,7 +82,7 @@ const civilData = await civilRes.json();
 // INTERIOR
 
 const interiorRes = await fetch(
-"http://localhost:5000/api/interior"
+"http://zirconhome.onrender.com/api/interior"
 );
 
 const interiorData = await interiorRes.json();
@@ -91,7 +91,7 @@ const interiorData = await interiorRes.json();
 // EXTERIOR
 
 const exteriorRes = await fetch(
-"http://localhost:5000/api/exterior"
+"http://zirconhome.onrender.com/api/exterior"
 );
 
 const exteriorData = await exteriorRes.json();
@@ -100,7 +100,7 @@ const exteriorData = await exteriorRes.json();
 // RENOVATION
 
 const renovationRes = await fetch(
-"http://localhost:5000/api/renovation"
+"http://zirconhome.onrender.com/api/renovation"
 );
 
 const renovationData = await renovationRes.json();
@@ -109,7 +109,7 @@ const renovationData = await renovationRes.json();
 // ELECTRICAL
 
 const electricalRes = await fetch(
-"http://localhost:5000/api/electrical"
+"http://zirconhome.onrender.com/api/electrical"
 );
 
 const electricalData = await electricalRes.json();
@@ -118,7 +118,7 @@ const electricalData = await electricalRes.json();
 // PLUMBING
 
 const plumbingRes = await fetch(
-"http://localhost:5000/api/plumbing"
+"http://zirconhome.onrender.com/api/plumbing"
 );
 
 const plumbingData = await plumbingRes.json();

@@ -1,5 +1,5 @@
 const API =
-"http://localhost:5000/api/services";
+"https://zirconhome.onrender.com/api/services";
 
 document.addEventListener(
 "DOMContentLoaded",

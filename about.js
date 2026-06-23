@@ -222,7 +222,7 @@ function animateStats() {
   }
 
   async function loadAboutData() {
-  const res = await fetch("http://localhost:5000/api/about");
+  const res = await fetch("https://zirconhome.onrender.com/api/about");
   const data = await res.json();
 
    console.log("ADMIN DATA 👉", data);
@@ -273,7 +273,7 @@ aboutElements.forEach(el => {
   if (item.image) {
    const img = aboutImage.querySelector("img");
 if (img && item.image) {
-  img.src = "http://localhost:5000" + item.image;
+  img.src = "http://zirconhome.onrender.com" + item.image;
 }
   }
 }
@@ -370,7 +370,7 @@ if (certContainer) {
 
  certData.forEach(item => {
   certContainer.innerHTML += `
-    <a href="${item.image ? 'http://localhost:5000' + item.image : '#'}" 
+    <a href="${item.image ? 'http://zirconhome.onrender.com' + item.image : '#'}" 
        target="_blank" 
        class="cert-box">
 

@@ -1,4 +1,4 @@
-const api = "http://localhost:5000/api/parties"
+const api = "https://zirconhome.onrender.com/api/parties"
 const grid = document.getElementById("clientsGrid")
 
 async function loadCompanies() {
@@ -10,7 +10,7 @@ async function loadCompanies() {
     data.forEach(p => {
         grid.innerHTML += `
         <div class="client-logo reveal">
-            <img src="http://localhost:5000${p.logo}" alt="Company Logo">
+            <img src="https://zirconhome.onrender.com${p.logo}" alt="Company Logo">
         </div>
         `
     })

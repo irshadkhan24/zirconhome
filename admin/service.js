@@ -1,5 +1,5 @@
 const API =
-"http://localhost:5000/api/services";
+"http://zirconhome.onrender.com/api/services";
 
 const form =
 document.getElementById("serviceForm");

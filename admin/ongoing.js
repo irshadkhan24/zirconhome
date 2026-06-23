@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api/ongoing";
+const API = "http://zirconhome.onrender.com/api/ongoing";
 
 let editId = null;
 
@@ -30,7 +30,7 @@ list.innerHTML += `
 
 <div class="project-item">
 
-<img src="http://localhost:5000/uploads/${project.image}" alt="project">
+<img src="http://zirconhome.onrender.com/uploads/${project.image}" alt="project">
 
 <div class="project-content">
 

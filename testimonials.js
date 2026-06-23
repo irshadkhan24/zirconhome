@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/testimonials");
+    const res = await fetch("https://zirconhome.onrender.com/api/testimonials");
     const data = await res.json();
 
     container.innerHTML = "";
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   <div class="top-section">
     <img 
-      src="${item.image ? 'http://localhost:5000' + item.image : 'images/default-user.png'}" 
+      src="${item.image ? 'https://zirconhome.onrender.com' + item.image : 'images/default-user.png'}" 
       class="client-img"
     />
 

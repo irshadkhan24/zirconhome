@@ -6,7 +6,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const BASE = "http://localhost:5000";
+  const BASE = "https://zirconhome.onrender.com";
 
   // =====================
   // LOAD HOME DATA

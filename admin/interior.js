@@ -119,7 +119,7 @@ function createImageBox(file){
 async function loadInteriorWorks() {
 
   const res = await fetch(
-    "http://localhost:5000/api/interior"
+    "http://zirconhome.onrender.com/api/interior"
   );
 
   const data = await res.json();
@@ -175,7 +175,7 @@ async function loadInteriorWorks() {
         <div class="previewCard">
 
           <img
-            src="http://localhost:5000${img.image}"
+            src="http://zirconhome.onrender.com${img.image}"
           >
 
           <h4>${img.title || ""}</h4>
@@ -278,7 +278,7 @@ document.querySelectorAll(".imgDetailBox")
 
 
   let url =
-  "http://localhost:5000/api/interior/add";
+  "http://zirconhome.onrender.com/api/interior/add";
 
   let method = "POST";
 
@@ -286,7 +286,7 @@ document.querySelectorAll(".imgDetailBox")
   if(editId){
 
     url =
-    `http://localhost:5000/api/interior/${editId}`;
+    `http://zirconhome.onrender.com/api/interior/${editId}`;
 
     method = "PUT";
 
@@ -315,7 +315,7 @@ document.querySelectorAll(".imgDetailBox")
 async function deleteInterior(id){
 
   await fetch(
-    `http://localhost:5000/api/interior/${id}`,
+    `http://zirconhome.onrender.com/api/interior/${id}`,
     {
       method:"DELETE"
     }
@@ -330,7 +330,7 @@ async function deleteInterior(id){
 async function editInterior(id){
 
   const res = await fetch(
-    "http://localhost:5000/api/interior"
+    "http://zirconhome.onrender.com/api/interior"
   );
 
   const data = await res.json();
@@ -383,7 +383,7 @@ async function editInterior(id){
       <div class="fileName">
 
         <img
-          src="http://localhost:5000${img.image}"
+          src="http://zirconhome.onrender.com${img.image}"
           style="
             width:120px;
             height:80px;

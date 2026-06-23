@@ -16,7 +16,7 @@ async function loadInteriorWorks() {
     try {
 
         const res = await fetch(
-            "http://localhost:5000/api/interior"
+            "https://zirconhome.onrender.com/api/interior"
         );
 
         const data = await res.json();
@@ -59,7 +59,7 @@ async function loadInteriorWorks() {
                             ${work.images.map(img => `
 
                                 <img 
-                                  src="http://localhost:5000${img}"
+                                  src="https://zirconhome.onrender.com${img}"
                                   alt=""
                                 >
 
@@ -187,7 +187,7 @@ function initCarousel(allWorks) {
             currentMeta =
             work.imageDetails.map(item => ({
                 src:
-                `http://localhost:5000${item.image}`,
+                `https://zirconhome.onrender.com${item.image}`,
 
                 title:
                 item.title,

@@ -80,7 +80,7 @@ footerObserver.observe(footer);
 // ================= DYNAMIC CONTACT DATA LOAD =================
 async function loadContactData() {
   try {
-    const res = await fetch("http://localhost:5000/api/contact");
+    const res = await fetch("https://zirconhome.onrender.com/api/contact");
     const data = await res.json();
 
     if (!data.length) return;

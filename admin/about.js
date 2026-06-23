@@ -14,7 +14,7 @@ sectionSelect.addEventListener("change", () => {
 
 async function loadAbout() {
 
-  const res = await fetch("http://localhost:5000/api/about");
+  const res = await fetch("http://zirconhome.onrender.com/api/about");
 
   const data = await res.json();
 
@@ -81,7 +81,7 @@ item.image
 `
 <div class="about-image-box">
 
-<img src="http://localhost:5000${item.image}">
+<img src="http://zirconhome.onrender.com${item.image}">
 
 ${
 section === "about"
@@ -276,7 +276,7 @@ function editData(id, section, title, description, icon) {
 async function deleteData(id) {
   if (!confirm("Delete this item?")) return;
 
-  await fetch("http://localhost:5000/api/about/" + id, {
+  await fetch("http://zirconhome.onrender.com/api/about/" + id, {
     method: "DELETE",
     headers: {
       
@@ -334,7 +334,7 @@ document.getElementById("aboutForm")
 
     };
 
-    let url = "http://localhost:5000/api/about";
+    let url = "http://zirconhome.onrender.com/api/about";
 
     let method = "POST";
 
@@ -342,7 +342,7 @@ document.getElementById("aboutForm")
 
     if (id) {
 
-      url = `http://localhost:5000/api/about/${id}`;
+      url = `http://zirconhome.onrender.com/api/about/${id}`;
 
       method = "PUT";
 
@@ -395,7 +395,7 @@ document.getElementById("aboutForm")
 
   }
 
-  let url = "http://localhost:5000/api/about";
+  let url = "http://zirconhome.onrender.com/api/about";
 
   let method = "POST";
 
@@ -403,7 +403,7 @@ document.getElementById("aboutForm")
 
   if (id) {
 
-    url = `http://localhost:5000/api/about/${id}`;
+    url = `http://zirconhome.onrender.com/api/about/${id}`;
 
     method = "PUT";
 

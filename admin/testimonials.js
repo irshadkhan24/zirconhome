@@ -8,7 +8,7 @@ window.location.href = "admin.html";
 // LOAD TESTIMONIALS
 async function loadTestimonials(){
 
-const res = await fetch("http://localhost:5000/api/testimonials");
+const res = await fetch("http://zirconhome.onrender.com/api/testimonials");
 const data = await res.json();
 
 const container = document.getElementById("testimonialList");
@@ -21,7 +21,7 @@ const div=document.createElement("div");
 
 div.innerHTML=`
 
-${t.image ? `<img src="http://localhost:5000${t.image}" width="100"><br>` : ""}
+${t.image ? `<img src="http://zirconhome.onrender.com${t.image}" width="100"><br>` : ""}
 
 <strong>${t.name}</strong> ⭐ ${t.rating}/5
 
@@ -72,7 +72,7 @@ formData.append("image",image);
 
 if(id){
 
-await fetch("http://localhost:5000/api/testimonials/"+id,{
+await fetch("http://zirconhome.onrender.com/api/testimonials/"+id,{
 method:"PUT",
 headers:{ Authorization:"Bearer "+token },
 body:formData
@@ -82,7 +82,7 @@ alert("Updated Successfully");
 
 }else{
 
-await fetch("http://localhost:5000/api/testimonials",{
+await fetch("http://zirconhome.onrender.com/api/testimonials",{
 method:"POST",
 headers:{ Authorization:"Bearer "+token },
 body:formData
@@ -105,7 +105,7 @@ async function deleteTestimonial(id){
 
 if(confirm("Delete this testimonial?")){
 
-await fetch("http://localhost:5000/api/testimonials/"+id,{
+await fetch("http://zirconhome.onrender.com/api/testimonials/"+id,{
 method:"DELETE",
 headers:{ Authorization:"Bearer "+token }
 });

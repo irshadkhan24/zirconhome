@@ -23,7 +23,7 @@ let fileStore = {
   partyLogos: {}
 };
 
-const API = "http://localhost:5000/api/home";
+const API = "http://zirconhome.onrender.com/api/home";
 const $ = (id) => document.getElementById(id);
 
 function escHtml(str) {
@@ -169,7 +169,7 @@ async function loadHome() {
     if (data.navbar?.logo) {
       const preview = $("navbarLogoPreview");
       if (preview) {
-        preview.src = `http://localhost:5000/${data.navbar.logo}`;
+        preview.src = `http://zirconhome.onrender.com/${data.navbar.logo}`;
         preview.style.display = "block";
       }
     }
@@ -181,7 +181,7 @@ async function loadHome() {
       $("aboutDescription").value = data.about.description || "";
       if (data.about.image) {
         const img = $("aboutPreview");
-        if (img) { img.src = `http://localhost:5000/${data.about.image}`; img.style.display = "block"; }
+        if (img) { img.src = `http://zirconhome.onrender.com/${data.about.image}`; img.style.display = "block"; }
       }
     }
 
@@ -264,7 +264,7 @@ function renderSlides() {
     if (fileStore.heroImages[i]) {
       imgPreview = `<img src="${URL.createObjectURL(fileStore.heroImages[i])}" style="max-width:200px;border:2px dashed #4A90E2;border-radius:6px;margin-top:4px;">`;
     } else if (s.image) {
-      imgPreview = `<img src="http://localhost:5000/${s.image}" style="max-width:200px;border-radius:6px;margin-top:4px;">`;
+      imgPreview = `<img src="http://zirconhome.onrender.com/${s.image}" style="max-width:200px;border-radius:6px;margin-top:4px;">`;
     }
     const div = document.createElement("div");
     div.className = "slideCard";
@@ -365,7 +365,7 @@ function renderParties() {
     if (fileStore.partyLogos[i]) {
       logoPreview = `<img src="${URL.createObjectURL(fileStore.partyLogos[i])}" style="max-width:120px;max-height:80px;border:2px dashed #4A90E2;border-radius:6px;margin-top:4px;">`;
     } else if (p.logo) {
-      logoPreview = `<img src="http://localhost:5000/${p.logo}" style="max-width:120px;max-height:80px;border-radius:6px;margin-top:4px;">`;
+      logoPreview = `<img src="http://zirconhome.onrender.com/${p.logo}" style="max-width:120px;max-height:80px;border-radius:6px;margin-top:4px;">`;
     }
     const div = document.createElement("div");
     div.className = "partyCard";
@@ -701,7 +701,7 @@ if (data.heroSlides?.length) {
         <div class="previewSlideCard">
         <div class="previewSlideLeft">
           ${s.image
-            ? `<img class="previewSlideImg" src="http://localhost:5000/${s.image}" alt="Slide ${idx+1}">`
+            ? `<img class="previewSlideImg" src="http://zirconhome.onrender.com/${s.image}" alt="Slide ${idx+1}">`
             : `<div class="previewNoImg"><i class="fa-solid fa-image"></i></div>`}
         </div>
         <div class="previewSlideRight">
@@ -753,7 +753,7 @@ if (data.heroSlides?.length) {
     partiesHtml = `<div class="previewPartiesGrid">`;
     data.parties.forEach((p, idx) => {
       partiesHtml += `<div class="previewPartyItem">
-        ${p.logo ? `<img src="http://localhost:5000/${p.logo}" alt="${escHtml(p.name)}">` : `<div class="previewNoImg small"><i class="fa-solid fa-handshake"></i></div>`}
+        ${p.logo ? `<img src="http://zirconhome.onrender.com/${p.logo}" alt="${escHtml(p.name)}">` : `<div class="previewNoImg small"><i class="fa-solid fa-handshake"></i></div>`}
         <div><b>${escHtml(p.name || '—')}</b></div>
         <div class="previewPartyActions">
           <button class="previewEditBtnSm" onclick="editPartyInForm(${idx})"><i class="fa-solid fa-pen"></i></button>
@@ -814,7 +814,7 @@ if (data.heroSlides?.length) {
     ${data.navbar?.logo ? `
     <div class="previewBlock">
       <div class="previewBlockTitle"><i class="fa-solid fa-image"></i> Navbar Logo</div>
-      <img class="previewLogoImg" src="http://localhost:5000/${data.navbar.logo}" alt="Logo">
+      <img class="previewLogoImg" src="http://zirconhome.onrender.com/${data.navbar.logo}" alt="Logo">
       <div class="previewActions" style="margin-top:10px;">
         <button class="previewEditBtn" onclick="scrollAndFocus('navbarLogo')"><i class="fa-solid fa-pen"></i> Edit Logo</button>
       </div>
@@ -833,7 +833,7 @@ if (data.heroSlides?.length) {
       <div class="previewRow"><span class="previewLabel">Title:</span> ${escHtml(data.about?.title || '—')}</div>
       <div class="previewRow"><span class="previewLabel">Subtitle:</span> ${escHtml(data.about?.subTitle || '—')}</div>
       <div class="previewRow previewDesc">${escHtml(data.about?.description || '—')}</div>
-      ${data.about?.image ? `<img src="http://localhost:5000/${data.about.image}" class="previewAboutImg">` : ''}
+      ${data.about?.image ? `<img src="http://zirconhome.onrender.com/${data.about.image}" class="previewAboutImg">` : ''}
       <div class="previewActions" style="margin-top:10px;">
         <button class="previewEditBtn" onclick="scrollAndFocus('aboutTitle')"><i class="fa-solid fa-pen"></i> Edit About</button>
       </div>
@@ -953,7 +953,7 @@ function editPartyInForm(idx) {
 function deleteSlideFromPreview(id, idx) {
   if (!confirm("Delete this slide from database?")) return;
   if (id && id !== "undefined") {
-    fetch(`http://localhost:5000/api/home/hero/${id}`, { method: "DELETE" })
+    fetch(`http://zirconhome.onrender.com/api/home/hero/${id}`, { method: "DELETE" })
       .then(r => r.json())
       .then(res => {
         if (res.success) { showToast("✅ Slide deleted!", "success"); loadHome(); }
@@ -971,7 +971,7 @@ function deleteSlideFromPreview(id, idx) {
 function deletePartyFromPreview(id, idx) {
   if (!confirm("Delete this party from database?")) return;
   if (id && id !== "undefined") {
-    fetch(`http://localhost:5000/api/home/party/${id}`, { method: "DELETE" })
+    fetch(`http://zirconhome.onrender.com/api/home/party/${id}`, { method: "DELETE" })
       .then(r => r.json())
       .then(res => {
         if (res.success) { showToast("✅ Party deleted!", "success"); loadHome(); }
@@ -1000,7 +1000,7 @@ function deleteStatLocal(idx) {
 // Build a fake data object from current state for preview refresh after local edits
 function buildFakeData() {
   return {
-    navbar: { logo: $("navbarLogoPreview")?.src?.replace("http://localhost:5000/", "") || "" },
+    navbar: { logo: $("navbarLogoPreview")?.src?.replace("http://zirconhome.onrender.com/", "") || "" },
     heroSlides: state.slides,
     about: {
       title: $("aboutTitle")?.value || "",

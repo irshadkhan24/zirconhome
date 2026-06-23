@@ -9,7 +9,7 @@ async function loadProjects() {
   try {
 
     const res = await fetch(
-      "http://localhost:5000/api/complete"
+      "https://zirconhome.onrender.com/api/complete"
     );
 
     const data = await res.json();
@@ -33,7 +33,7 @@ async function loadProjects() {
         <div class="project-image">
 
           <img 
-          src="http://localhost:5000/uploads/${project.image}" 
+          src="http:https://zirconhome.onrender.com/uploads/${project.image}" 
           alt="project">
 
         </div>
