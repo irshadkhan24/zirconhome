@@ -39,14 +39,13 @@ exports.loginAdmin = async (req, res) => {
 
     res.json({ token });
 
-  } 
-   catch (error) {
-  console.error("Forget Password Error:", error);
+  } catch (error) {
 
-  res.status(500).json({
-    message: error.message
-  });
-}
+    res.status(500).json({
+      message: "Server Error"
+    });
+
+  }
 
 };
 
@@ -56,7 +55,6 @@ exports.forgetPassword = async (req, res) => {
 
   try {
 
-  console.log("STEP 1: API HIT HO GAYA"); // 👈 ADD THIS
     const { email } = req.body;
 
     const admin = await Admin.findOne({ email });
@@ -67,10 +65,6 @@ exports.forgetPassword = async (req, res) => {
       });
     }
 
-  console.log("STEP 2: ADMIN FOUND"); // 👈 ADD THIS
-
-  console.log("EMAIL:", process.env.EMAIL_USER); // 👈 ADD THIS
-  console.log("PASS EXISTS:", !!process.env.EMAIL_PASS); // 👈 ADD THIS
     const resetToken = crypto
       .randomBytes(32)
       .toString("hex");
@@ -83,16 +77,16 @@ exports.forgetPassword = async (req, res) => {
     await admin.save();
 
     const resetURL =
-`https://zirconhome.com/resetpassword.html?token=${resetToken}`;
-   const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+      `https://zirconhome.onrender.com/resetpassword.html?token=${resetToken}`;
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      }
+    });
 
     await transporter.sendMail({
 
@@ -117,13 +111,14 @@ exports.forgetPassword = async (req, res) => {
       message: "Reset link sent to email"
     });
 
-  } catch (error) {
-  console.log("Forgot Password Error:", error);
+  } 
+    catch (error) {
 
-  res.status(500).json({
-    message: error.message
-  });
-}
+    res.status(500).json({
+      message: "Server Error"
+    });
+
+  }
 
 };
 
@@ -167,11 +162,11 @@ exports.resetPassword = async (req, res) => {
 
   } 
   catch (error) {
-  console.error("Forget Password Error:", error);
 
-  res.status(500).json({
-    message: error.message
-  });
-}
+    res.status(500).json({
+      message: "Server Error"
+    });
+
+  }
 
 };
