@@ -56,6 +56,7 @@ exports.forgetPassword = async (req, res) => {
 
   try {
 
+  console.log("STEP 1: API HIT HO GAYA"); // 👈 ADD THIS
     const { email } = req.body;
 
     const admin = await Admin.findOne({ email });
@@ -66,6 +67,10 @@ exports.forgetPassword = async (req, res) => {
       });
     }
 
+  console.log("STEP 2: ADMIN FOUND"); // 👈 ADD THIS
+
+  console.log("EMAIL:", process.env.EMAIL_USER); // 👈 ADD THIS
+  console.log("PASS EXISTS:", !!process.env.EMAIL_PASS); // 👈 ADD THIS
     const resetToken = crypto
       .randomBytes(32)
       .toString("hex");
@@ -79,14 +84,15 @@ exports.forgetPassword = async (req, res) => {
 
     const resetURL =
 `https://zirconhome.com/resetpassword.html?token=${resetToken}`;
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
+   const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
+});
 
     await transporter.sendMail({
 
