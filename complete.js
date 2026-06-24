@@ -33,7 +33,7 @@ async function loadProjects() {
         <div class="project-image">
 
           <img 
-          src="http:https://zirconhome.onrender.com/uploads/${project.image}" 
+          src="https://zirconhome.onrender.com/uploads/${project.image}" 
           alt="project">
 
         </div>
