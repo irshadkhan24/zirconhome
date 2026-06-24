@@ -8,7 +8,7 @@ toggleIcon.addEventListener("click", () => {
     passwordInput.type = "text";
     toggleIcon.classList.remove("fa-eye-slash");
     toggleIcon.classList.add("fa-eye");
-  } 
+  }
   else {
     passwordInput.type = "password";
     toggleIcon.classList.remove("fa-eye");
@@ -19,7 +19,7 @@ toggleIcon.addEventListener("click", () => {
 
 
 // Login Submit
-document.getElementById("loginForm").addEventListener("submit", async function(e){
+document.getElementById("loginForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const email = document.getElementById("email").value;
@@ -35,14 +35,23 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
 
     const data = await res.json();
 
-    if(data.token){
-      localStorage.setItem("adminToken", data.token);
-      window.location.href = "admindashboard.html";
-    } else {
-      
-    } errorMsg.textContent =
-data.message || "Login Failed";
+    if (data.token) {
 
+      localStorage.setItem(
+        "adminToken",
+        data.token
+      );
+
+      window.location.href =
+        "admindashboard.html";
+
+    }
+    else {
+
+      errorMsg.textContent =
+        data.message || "Login Failed";
+
+    }
   } catch (error) {
     errorMsg.textContent = "Server Error. Please try again.";
   }
