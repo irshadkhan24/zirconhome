@@ -79,21 +79,19 @@ exports.forgetPassword = async (req, res) => {
     const resetURL =
       `https://www.zirconhome.com/resetpassword.html?token=${resetToken}`;
 
-   const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
+  const transporter = nodemailer.createTransport({
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
-  }
+  },
+  connectionTimeout: 30000
 });
 
     await transporter.verify();
 console.log("SMTP Connected");
-
-console.log("EMAIL_USER =", process.env.EMAIL_USER);
-console.log("EMAIL_PASS EXISTS =", !!process.env.EMAIL_PASS);
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "FOUND" : "NOT FOUND");
 
     await transporter.sendMail({
 
