@@ -88,6 +88,9 @@ exports.forgetPassword = async (req, res) => {
       }
     });
 
+    await transporter.verify();
+console.log("SMTP Connected");
+
     await transporter.sendMail({
 
       from: process.env.EMAIL_USER,
@@ -113,12 +116,12 @@ exports.forgetPassword = async (req, res) => {
 
   } 
     catch (error) {
+  console.log(error);
 
-    res.status(500).json({
-      message: "Server Error"
-    });
-
-  }
+  res.status(500).json({
+    message: error.message
+  });
+}
 
 };
 
@@ -161,13 +164,13 @@ exports.resetPassword = async (req, res) => {
     });
 
   } 
-  catch (error) {
+ catch (error) {
+  console.log(error);
 
-    res.status(500).json({
-      message: "Server Error"
-    });
-
-  }
+  res.status(500).json({
+    message: error.message
+  });
+}
 
 };
 
