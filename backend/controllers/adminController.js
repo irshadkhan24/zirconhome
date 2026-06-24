@@ -77,24 +77,16 @@ exports.forgetPassword = async (req, res) => {
     await admin.save();
 
     const resetURL =
-      `https://www.zirconhome.com/resetpassword.html?token=${resetToken}`;
+      `https://zirconhome.onrender.com/resetpassword.html?token=${resetToken}`;
 
- console.log("EMAIL_USER =", process.env.EMAIL_USER);
-console.log("EMAIL_PASS =", process.env.EMAIL_PASS ? "FOUND" : "NOT FOUND");
- 
-      const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-  connectionTimeout: 30000
-});
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
 
-    await transporter.verify();
-console.log("SMTP Connected");
-console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "FOUND" : "NOT FOUND");
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      }
+    });
 
     await transporter.sendMail({
 
@@ -121,12 +113,12 @@ console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "FOUND" : "NOT FOUND");
 
   } 
     catch (error) {
-  console.log(error);
 
-  res.status(500).json({
-    message: error.message
-  });
-}
+    res.status(500).json({
+      message: "Server Error"
+    });
+
+  }
 
 };
 
@@ -169,13 +161,13 @@ exports.resetPassword = async (req, res) => {
     });
 
   } 
- catch (error) {
-  console.log(error);
+  catch (error) {
 
-  res.status(500).json({
-    message: error.message
-  });
-}
+    res.status(500).json({
+      message: "Server Error"
+    });
+
+  }
 
 };
 
