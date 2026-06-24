@@ -79,19 +79,18 @@ exports.forgetPassword = async (req, res) => {
     const resetURL =
       `https://zirconhome.com/resetpassword.html?token=${resetToken}`;
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      family: 4,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+   const transporter = nodemailer.createTransport({
+  host: "smtp-relay.brevo.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
-    console.log("EMAIL_USER =", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS exists =", !!process.env.EMAIL_PASS);
+   console.log("SMTP_USER =", process.env.SMTP_USER);
+console.log("SMTP_PASS exists =", !!process.env.SMTP_PASS);
     
     console.log("Sending email...");
 
@@ -154,7 +153,7 @@ exports.resetPassword = async (req, res) => {
       });
     }
 
-    admin.password = password;
+   admin.password = await bcrypt.hash(password, 10);
 
     admin.resetToken = undefined;
 

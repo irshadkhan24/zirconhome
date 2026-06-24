@@ -71,15 +71,17 @@ mongoose.connect(process.env.MONGO_URI)
     email: "zirconhome27@gmail.com"
   });
 
-  if (!existingAdmin) {
+if (!existingAdmin) {
 
-    await Admin.create({
-      email: "zirconhome27@gmail.com",
-      password: "admin123"
-    });
+  const hashedPassword = await bcrypt.hash("admin123", 10);
 
-    console.log("Default Admin Created");
-  }
+  await Admin.create({
+    email: "zirconhome27@gmail.com",
+    password: hashedPassword
+  });
+
+  console.log("Default Admin Created");  
+}
 
 })
 
