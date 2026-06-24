@@ -81,38 +81,34 @@ exports.forgetPassword = async (req, res) => {
 
 const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
-  port: 2525,
+  port: 2525, // IMPORTANT CHANGE
   secure: false,
+  requireTLS: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  connectionTimeout: 20000,
+  socketTimeout: 30000,
 });
 
    console.log("SMTP_USER =", process.env.SMTP_USER);
 console.log("SMTP_PASS exists =", !!process.env.SMTP_PASS);
     
-    console.log("Sending email...");
+   console.log("Sending email...");
 
-    await transporter.sendMail({
+const info = await transporter.sendMail({
+  from: `Zircon Home <${process.env.SMTP_USER}>`,
+  to: admin.email,
+  subject: "Password Reset",
+  html: `
+    <h2>Password Reset</h2>
+    <p>Click below link:</p>
+    <a href="${resetURL}">Reset Password</a>
+  `,
+});
 
-      from: process.env.SMTP_USER,
-
-      to: admin.email,
-
-      subject: "Password Reset",
-
-      html: `
-        <h2>Password Reset</h2>
-
-        <p>Click below link:</p>
-
-        <a href="${resetURL}">
-          Reset Password
-        </a>
-      `
-    });
-
+console.log("EMAIL SENT:", info.messageId);
     res.json({
       message: "Reset link sent to email"
     });
