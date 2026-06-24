@@ -79,10 +79,10 @@ exports.forgetPassword = async (req, res) => {
     const resetURL =
       `https://zirconhome.com/resetpassword.html?token=${resetToken}`;
 
-   const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
-  port: 465,
-  secure: true,
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -96,7 +96,7 @@ console.log("SMTP_PASS exists =", !!process.env.SMTP_PASS);
 
     await transporter.sendMail({
 
-      from: process.env.EMAIL_USER,
+      from: process.env.SMTP_USER,
 
       to: admin.email,
 
