@@ -14,7 +14,7 @@ sectionSelect.addEventListener("change", () => {
 
 async function loadAbout() {
 
-  const res = await fetch("http://zirconhome.onrender.com/api/about");
+  const res = await fetch("https://zirconhome.onrender.com/api/about");
 
   const data = await res.json();
 
@@ -276,7 +276,7 @@ function editData(id, section, title, description, icon) {
 async function deleteData(id) {
   if (!confirm("Delete this item?")) return;
 
-  await fetch("http://zirconhome.onrender.com/api/about/" + id, {
+  await fetch("https://zirconhome.onrender.com/api/about/" + id, {
     method: "DELETE",
     headers: {
       
@@ -334,7 +334,7 @@ document.getElementById("aboutForm")
 
     };
 
-    let url = "http://zirconhome.onrender.com/api/about";
+    let url = "https://zirconhome.onrender.com/api/about";
 
     let method = "POST";
 
@@ -342,7 +342,7 @@ document.getElementById("aboutForm")
 
     if (id) {
 
-      url = `http://zirconhome.onrender.com/api/about/${id}`;
+      url = `https://zirconhome.onrender.com/api/about/${id}`;
 
       method = "PUT";
 
@@ -395,7 +395,7 @@ document.getElementById("aboutForm")
 
   }
 
-  let url = "http://zirconhome.onrender.com/api/about";
+  let url = "https://zirconhome.onrender.com/api/about";
 
   let method = "POST";
 
@@ -403,7 +403,7 @@ document.getElementById("aboutForm")
 
   if (id) {
 
-    url = `http://zirconhome.onrender.com/api/about/${id}`;
+    url = `https://zirconhome.onrender.com/api/about/${id}`;
 
     method = "PUT";
 
