@@ -273,7 +273,7 @@ aboutElements.forEach(el => {
   if (item.image) {
    const img = aboutImage.querySelector("img");
 if (img && item.image) {
-  img.src = "http://zirconhome.onrender.com" + item.image;
+  img.src = "https://zirconhome.onrender.com" + item.image;
 }
   }
 }
@@ -358,7 +358,6 @@ data
   });
 
   // ================= CERT =================
-  // ================= CERT =================
 const certContainer = document.querySelector(".cert-grid");
 
 if (certContainer) {
@@ -370,7 +369,7 @@ if (certContainer) {
 
  certData.forEach(item => {
   certContainer.innerHTML += `
-    <a href="${item.image ? 'http://zirconhome.onrender.com' + item.image : '#'}" 
+    <a href="${item.image ? 'https://zirconhome.onrender.com' + item.image : '#'}" 
        target="_blank" 
        class="cert-box">
 
